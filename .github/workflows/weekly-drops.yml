@@ -1,0 +1,49 @@
+# Place this file at:  .github/workflows/weekly-drops.yml
+# It runs every Friday, pulls each artist's latest Spotify release into drops.json,
+# and commits it. (You can also click "Run workflow" manually to test.)
+
+name: Weekly drops + newsletter
+
+on:
+  schedule:
+    - cron: "0 14 * * 5"   # Fridays 14:00 UTC (~9-10am US Eastern)
+  workflow_dispatch:        # manual run button
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Pull latest drops from Spotify
+        env:
+          SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+          SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
+        run: node scripts/update-drops.mjs
+
+      - name: Commit drops.json if it changed
+        run: |
+          git config user.name  "creekbay-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add drops.json
+          git diff --staged --quiet || git commit -m "chore: refresh latest drops"
+          git push
+
+      # ---- OPTIONAL: send the Friday newsletter ----
+      # Uncomment and fill in once you've picked an email service (Buttondown shown).
+      # Buttondown -> Settings -> API key, saved as secret BUTTONDOWN_API_KEY.
+      #
+      # - name: Send Friday email
+      #   env:
+      #     BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
+      #   run: |
+      #     curl -s -X POST "https://api.buttondown.email/v1/emails" \
+      #       -H "Authorization: Token $BUTTONDOWN_API_KEY" \
+      #       -H "Content-Type: application/json" \
+      #       -d '{"subject":"New from Creek Bay","body":"Fresh drops are up — check the site: https://creekbayrecords.com"}'
