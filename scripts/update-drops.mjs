@@ -1,8 +1,3 @@
-// update-drops.mjs
-// Pulls each Creek Bay artist's Spotify catalog and writes:
-//   drops.json     -> latest release
-//   releases.json  -> full release list
-
 import { writeFileSync } from "node:fs";
 
 const ARTISTS = {
@@ -14,131 +9,178 @@ const ARTISTS = {
   creekbay: "0R4xb9TxlzWfdSzUTeraMg",
 };
 
-const { SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET } = process.env;
+const {
+  SPOTIFY_CLIENT_ID,
+  SPOTIFY_CLIENT_SECRET
+} = process.env;
 
 if (!SPOTIFY_CLIENT_ID || !SPOTIFY_CLIENT_SECRET) {
-  console.error("❌ Missing SPOTIFY_CLIENT_ID or SPOTIFY_CLIENT_SECRET.");
-  process.exit(1);
+  throw new Error("Missing Spotify credentials.");
+}
+
+async function sleep(ms) {
+  return new Promise(r => setTimeout(r, ms));
+}
+
+async function spotifyFetch(url, token) {
+  while (true) {
+    const res = await fetch(url, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    });
+
+    if (res.status === 429) {
+      const retry = Number(res.headers.get("Retry-After") || 1);
+      console.log(`Rate limited. Waiting ${retry}s...`);
+      await sleep(retry * 1000);
+      continue;
+    }
+
+    if (!res.ok) {
+      const body = await res.text();
+      throw new Error(
+        `Spotify ${res.status}\n${url}\n${body}`
+      );
+    }
+
+    return res.json();
+  }
 }
 
 async function getToken() {
-  const res = await fetch("https://accounts.spotify.com/api/token", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
-      Authorization:
-        "Basic " +
-        Buffer.from(
-          `${SPOTIFY_CLIENT_ID}:${SPOTIFY_CLIENT_SECRET}`
-        ).toString("base64"),
-    },
-    body: "grant_type=client_credentials",
-  });
-
-  const body = await res.text();
+  const res = await fetch(
+    "https://accounts.spotify.com/api/token",
+    {
+      method: "POST",
+      headers: {
+        Authorization:
+          "Basic " +
+          Buffer.from(
+            `${SPOTIFY_CLIENT_ID}:${SPOTIFY_CLIENT_SECRET}`
+          ).toString("base64"),
+        "Content-Type":
+          "application/x-www-form-urlencoded"
+      },
+      body: "grant_type=client_credentials"
+    }
+  );
 
   if (!res.ok) {
-    console.error("❌ TOKEN REQUEST FAILED");
-    console.error("Status:", res.status);
-    console.error(body);
-    process.exit(1);
+    throw new Error(await res.text());
   }
 
-  const json = JSON.parse(body);
+  const json = await res.json();
 
-  console.log("✅ Spotify token received.");
+  console.log("✓ Spotify token acquired");
 
   return json.access_token;
 }
 
-async function allReleases(token, artistId) {
-  let url = `https://api.spotify.com/v1/artists/${artistId}/albums?include_groups=album,single&limit=20`;
+async function getArtistReleases(token, artistId) {
 
-  const items = [];
+  let url =
+    `https://api.spotify.com/v1/artists/${artistId}/albums?include_groups=album,single`;
+
+  const albums = [];
 
   while (url) {
-    console.log("Fetching:", url);
 
-    const res = await fetch(url, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+    console.log("Fetching", url);
 
-    if (!res.ok) {
-      const body = await res.text();
+    const page = await spotifyFetch(url, token);
 
-      console.error("\n❌ SPOTIFY REQUEST FAILED");
-      console.error("Artist ID:", artistId);
-      console.error("Status:", res.status);
-      console.error("URL:", url);
-      console.error("Response:");
-      console.error(body);
+    albums.push(...page.items);
 
-      throw new Error(`Spotify returned ${res.status}`);
-    }
-
-    const data = await res.json();
-
-    items.push(...(data.items || []));
-
-    url = data.next;
+    url = page.next;
   }
 
   const seen = new Set();
 
-  return items
-    .map((r) => ({
-      id: r.id,
-      title: r.name,
-      releaseDate: r.release_date,
-      type: r.album_type,
-      url: r.external_urls?.spotify ?? "",
-      cover: r.images?.[0]?.url ?? "",
-    }))
-    .filter((r) => {
-      if (seen.has(r.id)) return false;
-      seen.add(r.id);
+  return albums
+    .filter(album => {
+
+      if (seen.has(album.id))
+        return false;
+
+      seen.add(album.id);
+
       return true;
+
     })
-    .sort(
-      (a, b) =>
-        new Date(b.releaseDate).getTime() -
-        new Date(a.releaseDate).getTime()
+    .map(album => ({
+
+      id: album.id,
+
+      title: album.name,
+
+      releaseDate: album.release_date,
+
+      type: album.album_type,
+
+      url: album.external_urls?.spotify ?? "",
+
+      cover: album.images?.[0]?.url ?? ""
+
+    }))
+    .sort((a, b) =>
+      new Date(b.releaseDate) -
+      new Date(a.releaseDate)
     );
+
 }
 
 const token = await getToken();
 
 const drops = {
   updated: new Date().toISOString(),
-  drops: {},
+  drops: {}
 };
 
 const releases = {
   updated: new Date().toISOString(),
-  releases: {},
+  releases: {}
 };
 
 for (const [slug, artistId] of Object.entries(ARTISTS)) {
+
   console.log(`\n=== ${slug} ===`);
 
   try {
-    const list = await allReleases(token, artistId);
+
+    const list = await getArtistReleases(
+      token,
+      artistId
+    );
 
     releases.releases[slug] = list;
-    drops.drops[slug] = list[0] || null;
+
+    drops.drops[slug] = list[0] ?? null;
 
     console.log(
-      `✅ ${slug}: ${list.length} releases`
+      `✓ ${list.length} releases`
     );
+
   } catch (err) {
-    console.error(`❌ ${slug} failed`);
-    console.error(err);
+
+    console.error(err.message);
+
+    releases.releases[slug] = [];
+
+    drops.drops[slug] = null;
+
   }
+
 }
 
-writeFileSync("drops.json", JSON.stringify(drops, null, 2));
-writeFileSync("releases.json", JSON.stringify(releases, null, 2));
+writeFileSync(
+  "drops.json",
+  JSON.stringify(drops, null, 2)
+);
 
-console.log("\n✅ Finished writing drops.json and releases.json");
+writeFileSync(
+  "releases.json",
+  JSON.stringify(releases, null, 2)
+);
+
+console.log("\nDone.");
