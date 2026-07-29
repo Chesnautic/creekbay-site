@@ -106,6 +106,8 @@
   .rg-item:hover .rg-cover{border-color:var(--accent)}
   .rg-t{display:block;font-family:"AppleGaramond",Georgia,serif;font-weight:600;font-size:16px;margin-top:10px;line-height:1.1}
   .rg-y{display:block;font-size:11px;letter-spacing:.16em;color:var(--ash);margin-top:4px}
+  .rg-badge{display:inline-block;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);padding:1px 5px;margin-left:7px;vertical-align:middle;line-height:1.6}
+  .rg-pinned .rg-cover{border-color:rgba(222,122,28,.35)}
   .rg-cover.mystery{display:grid;place-items:center;font-family:"AppleGaramond",Georgia,serif;font-weight:900;font-size:46px;color:var(--ash);background:#0F0F0E}
   .photo-gallery{columns:3 260px;column-gap:clamp(10px,1.5vw,18px)}
   .pg-item{width:100%;height:auto;display:block;margin:0 0 clamp(10px,1.5vw,18px);border:1px solid var(--line-d);break-inside:avoid}
@@ -309,19 +311,39 @@
 </script>
 <script>
 (function(){
-  var slug="00hunnid", upcoming=[], official=[], featured=[];
+  var slug="00hunnid", upcoming=[];
   function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;');}
-  function tile(r,label){var y=label||((r.releaseDate||'').slice(0,4));var has=!!r.cover;var bg=has?' style="background-image:url('+r.cover+')"':'';return '<a class="rg-item" href="'+(r.url||'#')+'" target="_blank" rel="noopener"><span class="rg-cover'+(has?'':' mystery')+'"'+bg+'>'+(has?'':'?')+'</span><span class="rg-t">'+esc(r.title)+'</span><span class="rg-y">'+esc(y)+'</span></a>';}
+  function tile(r,tag){
+    var y=(r.releaseDate||'').slice(0,4); var has=!!r.cover;
+    var bg=has?' style="background-image:url('+r.cover+')"':'';
+    var badge=tag?'<span class="rg-badge">'+tag+'</span>':'';
+    return '<a class="rg-item'+(tag?' rg-pinned':'')+'" href="'+(r.url||'#')+'" target="_blank" rel="noopener">'
+      +'<span class="rg-cover'+(has?'':' mystery')+'"'+bg+'>'+(has?'':'?')+'</span>'
+      +'<span class="rg-t">'+esc(r.title)+badge+'</span>'
+      +'<span class="rg-y">'+esc(y)+'</span></a>';
+  }
   function mysTile(t){return '<span class="rg-item"><span class="rg-cover mystery">?</span><span class="rg-t">'+esc(t)+'</span><span class="rg-y">Upcoming</span></span>';}
-  function render(list){
-    var html=featured.map(function(r){return tile(r,'Featured');}).join('')
-            +official.map(function(r){return tile(r,null);}).join('')
-            +(list||[]).map(function(r){return tile(r,null);}).join('')
-            +upcoming.map(mysTile).join('');
-    if(!html)return; var g=document.querySelector('.rel-gallery'); if(!g)return;
+  function render(data){
+    // data = { official: [], featured: [] } from your Spotify script
+    var official=(data&&data.official)||[];
+    var featured=(data&&data.featured)||[];
+    var html='';
+    // 1. latest official release — pinned at top with "Latest" badge
+    if(official[0]) html+=tile(official[0],'Latest');
+    // 2. rest of official catalog (skip the first which is already shown)
+    html+=official.slice(1).map(function(r){return tile(r,null);}).join('');
+    // 3. featured appearances — tagged "Featured"
+    html+=featured.map(function(r){return tile(r,'Featured');}).join('');
+    // 4. upcoming mystery covers at the bottom
+    html+=upcoming.map(mysTile).join('');
+    if(!html)return;
+    var g=document.querySelector('.rel-gallery'); if(!g)return;
     g.innerHTML=html; document.getElementById('rel-gallery').hidden=false;
   }
-  fetch('releases.json').then(function(r){return r.json();}).then(function(d){render((d.releases&&d.releases[slug])||[]);}).catch(function(){render([]);});
+  fetch('releases.json')
+    .then(function(r){return r.json();})
+    .then(function(d){render(d.releases&&d.releases[slug]);})
+    .catch(function(){render(null);});
 })();
 </script>
 
