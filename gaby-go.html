@@ -51,7 +51,7 @@
   .dvd img{width:100%;display:block}
   .pk-hint{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--ash)}
   .pk-bg{position:absolute;inset:0;z-index:0;overflow:hidden;background:#0F0F0E}
-  .pk-bg img{width:100%;height:100%;object-fit:cover;opacity:.55}
+  .pk-bg img{width:100%;height:100%;object-fit:cover;object-position:center 70%;opacity:.6}
   .pk-hero .back,.pk-hero .m-eyebrow,.pk-hint{z-index:2}
   @keyframes dvdFade{0%{opacity:0}4%{opacity:1}46%{opacity:1}50%{opacity:0}100%{opacity:0}}
 
@@ -100,6 +100,9 @@
   .rg-item:hover .rg-cover{border-color:var(--accent)}
   .rg-t{display:block;font-family:"AppleGaramond",Georgia,serif;font-weight:600;font-size:16px;margin-top:10px;line-height:1.1}
   .rg-y{display:block;font-size:11px;letter-spacing:.16em;color:var(--ash);margin-top:4px}
+  .rg-cover.mystery{display:grid;place-items:center;font-family:"AppleGaramond",Georgia,serif;font-weight:900;font-size:46px;color:var(--ash);background:#0F0F0E}
+  .photo-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:clamp(10px,1.5vw,18px)}
+  .pg-item{width:100%;aspect-ratio:4/5;object-fit:cover;border:1px solid var(--line-d)}
 
   footer{position:relative;z-index:1;padding:clamp(50px,8vh,90px) 0 44px;text-align:center}
   .foot-logo{width:150px;margin:0 auto 24px}
@@ -198,6 +201,7 @@
       </div>
     </div>
   </section>
+
   <!-- RELEASES GALLERY (auto-filled from Spotify via releases.json) -->
   <section class="m-sec" id="rel-gallery" hidden>
     <div class="wrap">
@@ -233,18 +237,12 @@
 </script>
 <script>
 (function(){
-  var slug="gaby-go";
-  fetch('releases.json').then(function(r){return r.json();}).then(function(d){
-    var list=(d.releases&&d.releases[slug])||[];
-    if(!list.length)return;
-    var g=document.querySelector('.rel-gallery'); if(!g)return;
-    g.innerHTML=list.map(function(r){
-      var y=(r.releaseDate||'').slice(0,4);
-      var bg=r.cover?' style="background-image:url('+r.cover+')"':'';
-      return '<a class="rg-item" href="'+r.url+'" target="_blank" rel="noopener"><span class="rg-cover"'+bg+'></span><span class="rg-t">'+r.title+'</span><span class="rg-y">'+y+'</span></a>';
-    }).join('');
-    document.getElementById('rel-gallery').hidden=false;
-  }).catch(function(){});
+  var slug="gaby-go", upcoming=[];
+  function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+  function relTile(r){var y=(r.releaseDate||'').slice(0,4);var bg=r.cover?' style="background-image:url('+r.cover+')"':'';return '<a class="rg-item" href="'+r.url+'" target="_blank" rel="noopener"><span class="rg-cover"'+bg+'></span><span class="rg-t">'+esc(r.title)+'</span><span class="rg-y">'+y+'</span></a>';}
+  function mysTile(t){return '<span class="rg-item"><span class="rg-cover mystery">?</span><span class="rg-t">'+esc(t)+'</span><span class="rg-y">Upcoming</span></span>';}
+  function render(list){var html=(list||[]).map(relTile).join('')+upcoming.map(mysTile).join('');if(!html)return;var g=document.querySelector('.rel-gallery');if(!g)return;g.innerHTML=html;document.getElementById('rel-gallery').hidden=false;}
+  fetch('releases.json').then(function(r){return r.json();}).then(function(d){render((d.releases&&d.releases[slug])||[]);}).catch(function(){render([]);});
 })();
 </script>
 
