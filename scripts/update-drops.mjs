@@ -52,7 +52,7 @@ async function getToken() {
 }
 
 async function allReleases(token, artistId) {
-  let url = `https://api.spotify.com/v1/artists/${artistId}/albums?include_groups=album,single&limit=50`;
+  let url = `https://api.spotify.com/v1/artists/${artistId}/albums?include_groups=album,single&limit=20`;
 
   const items = [];
 
