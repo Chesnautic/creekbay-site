@@ -85,6 +85,11 @@
   .drop-meta h3{font-family:"AppleGaramond",Georgia,serif;font-weight:900;font-size:clamp(28px,4vw,52px);line-height:.98;margin:14px 0 18px}
   .drop-meta a{display:inline-block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;border-bottom:1px solid var(--line-d);padding-bottom:3px;transition:.2s}
   .drop-meta a:hover{color:var(--paper);border-color:var(--paper)}
+  #latest-drop .m-drop{text-decoration:none;color:inherit;cursor:pointer}
+  #ld-cover.has-img{background-size:cover;background-position:center}
+  #ld-cover.has-img span{display:none}
+  .ld-go{display:inline-block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ash);border-bottom:1px solid var(--line-d);padding-bottom:3px;transition:.2s}
+  #latest-drop .m-drop:hover .ld-go{color:var(--paper);border-color:var(--paper)}
 
   .music-list{border-top:1px solid var(--line-d)}
   .music-row{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:clamp(16px,3vw,28px) 0;border-bottom:1px solid var(--line-d);font-family:"AppleGaramond",Georgia,serif;font-weight:600;font-size:clamp(22px,4vw,44px);letter-spacing:-.01em;transition:.35s}
@@ -101,8 +106,51 @@
   .rg-t{display:block;font-family:"AppleGaramond",Georgia,serif;font-weight:600;font-size:16px;margin-top:10px;line-height:1.1}
   .rg-y{display:block;font-size:11px;letter-spacing:.16em;color:var(--ash);margin-top:4px}
   .rg-cover.mystery{display:grid;place-items:center;font-family:"AppleGaramond",Georgia,serif;font-weight:900;font-size:46px;color:var(--ash);background:#0F0F0E}
-  .photo-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:clamp(10px,1.5vw,18px)}
-  .pg-item{width:100%;aspect-ratio:4/5;object-fit:cover;border:1px solid var(--line-d)}
+  .photo-gallery{columns:3 260px;column-gap:clamp(10px,1.5vw,18px)}
+  .pg-item{width:100%;height:auto;display:block;margin:0 0 clamp(10px,1.5vw,18px);border:1px solid var(--line-d);break-inside:avoid}
+  /* ===== E chrome / gothic hero ===== */
+  .e-hero{position:relative;height:100svh;min-height:600px;overflow:hidden;padding:0;display:flex;align-items:center;justify-content:center;background:radial-gradient(130% 100% at 50% 32%,#0b0b0c 0%,#060606 62%,#050505 100%);border-bottom:1px solid var(--line-d)}
+  .e-defs{position:absolute}
+  .e-cross{position:absolute;inset:0;z-index:0;display:flex;align-items:center;justify-content:center;pointer-events:none}
+  .e-cross svg{width:min(72vh,560px);height:auto;filter:blur(28px);opacity:var(--cx,.07);animation:eSpin 210s linear infinite}
+  @keyframes eSpin{to{transform:rotate(360deg)}}
+  .e-fx{position:absolute;inset:0;z-index:1;width:100%;height:100%;display:block}
+  .e-center{position:relative;z-index:4;text-align:center;padding:0 22px;pointer-events:none}
+  .e-eyebrow{font-family:"Archivo",sans-serif;font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:var(--ash);margin-bottom:22px}
+  .e-mark{display:inline-block;line-height:.8;filter:brightness(var(--eb,1));transition:filter .3s ease;pointer-events:auto}
+  .e-letter{font-family:"AppleGaramond",Georgia,serif;font-weight:900;font-size:clamp(150px,42vh,360px);line-height:.8;display:inline-block;background:linear-gradient(158deg,#ffffff 0%,#d2dae2 15%,#616d78 39%,#262c32 50%,#8b96a2 60%,#eef3f7 77%,#aeb8c1 100%);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:220% 220%;animation:eShimmer 7.5s ease-in-out infinite;filter:url(#eRipple);will-change:background-position}
+  @keyframes eShimmer{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+  .e-name{font-family:"AppleGaramond",Georgia,serif;font-weight:900;text-transform:uppercase;letter-spacing:.03em;font-size:clamp(15px,2.3vw,25px);color:#c6ccd3;margin-top:20px;opacity:.9}
+  .e-back{position:absolute;top:24px;left:24px;z-index:5;font-family:"Archivo",sans-serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ash);text-decoration:none}
+  .e-back:hover{color:var(--paper)}
+  .e-scroll{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);z-index:5;font-family:"Archivo",sans-serif;font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--ash);opacity:.55}
+  @media (prefers-reduced-motion:reduce){.e-cross svg{animation:none}.e-letter{animation:none;filter:none}}
+  /* ===== URA thorn vines ===== */
+  .ura-vine{position:fixed;top:0;bottom:0;width:clamp(54px,7vw,104px);z-index:1;pointer-events:none;opacity:.55;animation:vineFade 1.8s ease-in 10s forwards}
+  .ura-vine.left{left:0}
+  .ura-vine.left path{transform-origin:50% 100%}
+  .ura-vine.right path{transform-origin:50% 0%}
+  .ura-vine.right{right:0;transform:scaleX(-1)}
+  .ura-vine svg{width:100%;height:100%;display:block}
+  .ura-vine path{fill:none;stroke:var(--ash);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:vineGrow 3.6s cubic-bezier(.22,1,.36,1) forwards, vineSway 5.5s ease-in-out 3.4s infinite}
+  .ura-vine.right path{stroke:var(--ash-dk)}
+  @keyframes vineGrow{to{stroke-dashoffset:0}}
+  @keyframes vineSway{0%,100%{transform:rotate(-1.3deg)}50%{transform:rotate(1.3deg)}}
+  @keyframes vineFade{to{opacity:0}}
+  @media (prefers-reduced-motion:reduce){.ura-vine{animation:none}.ura-vine path{animation:none;stroke-dashoffset:0}}
+  /* ===== TheLonnyWeb corner web + climbing spider ===== */
+  .lw-web{position:fixed;top:0;right:0;width:clamp(150px,21vw,240px);height:clamp(150px,21vw,240px);z-index:3;pointer-events:none}
+  .lw-websvg{position:absolute;top:0;right:0;width:100%;height:100%;overflow:visible}
+  .lw-threads line,.lw-threads path{stroke:#d0ccc1;stroke-width:.8;fill:none;opacity:0;animation:lwWebIn 1.6s ease-out .2s forwards}
+  @keyframes lwWebIn{to{opacity:.66}}
+  .lw-drop{position:absolute;top:50%;right:44%;width:0;height:0}
+  .lw-silk{position:absolute;top:0;left:0;width:1px;height:140px;transform-origin:top center;transform:translateX(-50%) scaleY(1);background:linear-gradient(#d0ccc1,rgba(208,204,193,.12));animation:lwSilk 6.2s ease-in-out 1.4s infinite}
+  .lw-spider{position:absolute;left:0;top:0;width:clamp(34px,4.4vw,50px);height:auto;transform:translate(-50%,140px);animation:lwCrawl 6.2s ease-in-out 1.4s infinite}
+  .lw-legs{transform-origin:50% 42%;animation:lwLegs .5s ease-in-out infinite alternate}
+  @keyframes lwCrawl{0%{transform:translate(-50%,140px)}70%{transform:translate(-50%,22px)}82%{transform:translate(-50%,22px)}100%{transform:translate(-50%,140px)}}
+  @keyframes lwSilk{0%{transform:translateX(-50%) scaleY(1)}70%{transform:translateX(-50%) scaleY(.157)}82%{transform:translateX(-50%) scaleY(.157)}100%{transform:translateX(-50%) scaleY(1)}}
+  @keyframes lwLegs{from{transform:rotate(-2.2deg) scaleY(.98)}to{transform:rotate(2.2deg) scaleY(1.02)}}
+  @media (prefers-reduced-motion:reduce){.lw-threads line,.lw-threads path{animation:none;opacity:.58}.lw-silk{animation:none;transform:translateX(-50%) scaleY(.5)}.lw-spider{animation:none;transform:translate(-50%,70px)}.lw-legs{animation:none}}
 
   footer{position:relative;z-index:1;padding:clamp(50px,8vh,90px) 0 44px;text-align:center}
   .foot-logo{width:150px;margin:0 auto 24px}
@@ -158,10 +206,6 @@
     </div>
   </section>
 
-
-
-
-
   <!-- LISTEN -->
   <section class="m-sec">
     <div class="wrap">
@@ -172,6 +216,11 @@
       </div>
     </div>
   </section>
+
+  <!-- RELEASES: latest drop first, then the full catalog -->
+
+
+
 
   <!-- RELEASES GALLERY (auto-filled from Spotify via releases.json) -->
   <section class="m-sec" id="rel-gallery" hidden>
