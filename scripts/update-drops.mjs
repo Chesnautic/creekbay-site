@@ -1,3 +1,10 @@
+// update-drops.mjs
+// Creek Bay Spotify catalog updater
+//
+// Outputs:
+//   drops.json     -> latest official release per artist
+//   releases.json  -> official catalog + featured appearances
+
 import { writeFileSync } from "node:fs";
 
 const ARTISTS = {
@@ -11,42 +18,16 @@ const ARTISTS = {
 
 const {
   SPOTIFY_CLIENT_ID,
-  SPOTIFY_CLIENT_SECRET
+  SPOTIFY_CLIENT_SECRET,
 } = process.env;
 
+
 if (!SPOTIFY_CLIENT_ID || !SPOTIFY_CLIENT_SECRET) {
-  throw new Error("Missing Spotify credentials.");
+  throw new Error(
+    "Missing SPOTIFY_CLIENT_ID or SPOTIFY_CLIENT_SECRET"
+  );
 }
 
-async function sleep(ms) {
-  return new Promise(r => setTimeout(r, ms));
-}
-
-async function spotifyFetch(url, token) {
-  while (true) {
-    const res = await fetch(url, {
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
-    });
-
-    if (res.status === 429) {
-      const retry = Number(res.headers.get("Retry-After") || 1);
-      console.log(`Rate limited. Waiting ${retry}s...`);
-      await sleep(retry * 1000);
-      continue;
-    }
-
-    if (!res.ok) {
-      const body = await res.text();
-      throw new Error(
-        `Spotify ${res.status}\n${url}\n${body}`
-      );
-    }
-
-    return res.json();
-  }
-}
 
 async function getToken() {
   const res = await fetch(
@@ -59,113 +40,328 @@ async function getToken() {
           Buffer.from(
             `${SPOTIFY_CLIENT_ID}:${SPOTIFY_CLIENT_SECRET}`
           ).toString("base64"),
+
         "Content-Type":
-          "application/x-www-form-urlencoded"
+          "application/x-www-form-urlencoded",
       },
-      body: "grant_type=client_credentials"
+      body:
+        "grant_type=client_credentials",
     }
   );
 
+
+  const data = await res.json();
+
+
   if (!res.ok) {
-    throw new Error(await res.text());
+    throw new Error(
+      JSON.stringify(data)
+    );
   }
 
-  const json = await res.json();
 
-  console.log("✓ Spotify token acquired");
-
-  return json.access_token;
+  return data.access_token;
 }
 
-async function getArtistReleases(token, artistId) {
+
+
+async function spotifyFetch(url, token) {
+
+  const res = await fetch(url, {
+    headers: {
+      Authorization:
+        `Bearer ${token}`,
+    },
+  });
+
+
+  if (res.status === 429) {
+    const wait =
+      Number(res.headers.get("Retry-After") || 2);
+
+    console.log(
+      `Rate limited. Waiting ${wait}s`
+    );
+
+    await new Promise(
+      r => setTimeout(r, wait * 1000)
+    );
+
+    return spotifyFetch(url, token);
+  }
+
+
+  const data = await res.json();
+
+
+  if (!res.ok) {
+    throw new Error(
+      JSON.stringify(data)
+    );
+  }
+
+
+  return data;
+}
+
+
+
+// Get Spotify artist profile
+async function getArtist(token, id) {
+
+  return spotifyFetch(
+    `https://api.spotify.com/v1/artists/${id}`,
+    token
+  );
+
+}
+
+
+
+// Get official albums/singles
+async function getOfficialReleases(token, id) {
 
   let url =
-    `https://api.spotify.com/v1/artists/${artistId}/albums?include_groups=album,single`;
+    `https://api.spotify.com/v1/artists/${id}/albums?include_groups=album,single`;
 
-  const albums = [];
+
+  const results = [];
+
 
   while (url) {
 
-    console.log("Fetching", url);
+    const page =
+      await spotifyFetch(url, token);
 
-    const page = await spotifyFetch(url, token);
 
-    albums.push(...page.items);
+    results.push(
+      ...page.items
+    );
+
 
     url = page.next;
+
   }
 
-  const seen = new Set();
 
-  return albums
-    .filter(album => {
+  return results;
 
-      if (seen.has(album.id))
+}
+
+
+
+// Search releases where artist appears
+async function getFeaturedReleases(token, artistName) {
+
+  const query =
+    encodeURIComponent(
+      `"${artistName}"`
+    );
+
+
+  const data =
+    await spotifyFetch(
+      `https://api.spotify.com/v1/search?q=${query}&type=track&limit=10`,
+      token
+    );
+
+
+  const albums = [];
+
+
+  for (const track of data.tracks.items) {
+
+    const appears =
+      track.artists.some(
+        artist =>
+          artist.name.toLowerCase() ===
+          artistName.toLowerCase()
+      );
+
+
+    if (appears) {
+      albums.push(track.album);
+    }
+
+  }
+
+
+  return albums;
+
+}
+
+
+
+function cleanReleaseList(items) {
+
+  const seen =
+    new Set();
+
+
+  return items
+    .filter(item => {
+
+      if (!item?.id)
         return false;
 
-      seen.add(album.id);
+
+      if (seen.has(item.id))
+        return false;
+
+
+      seen.add(item.id);
 
       return true;
 
     })
-    .map(album => ({
 
-      id: album.id,
 
-      title: album.name,
+    .map(item => ({
 
-      releaseDate: album.release_date,
+      id: item.id,
 
-      type: album.album_type,
+      title: item.name,
 
-      url: album.external_urls?.spotify ?? "",
+      releaseDate:
+        item.release_date,
 
-      cover: album.images?.[0]?.url ?? ""
+      type:
+        item.album_type,
+
+      cover:
+        item.images?.[0]?.url || "",
+
+      url:
+        item.external_urls?.spotify || "",
 
     }))
-    .sort((a, b) =>
-      new Date(b.releaseDate) -
-      new Date(a.releaseDate)
+
+
+    .sort((a,b) =>
+      new Date(b.releaseDate || 0) -
+      new Date(a.releaseDate || 0)
     );
 
 }
 
-const token = await getToken();
+
+
+const token =
+  await getToken();
+
 
 const drops = {
-  updated: new Date().toISOString(),
-  drops: {}
+  updated:
+    new Date().toISOString(),
+
+  drops: {},
 };
+
 
 const releases = {
-  updated: new Date().toISOString(),
-  releases: {}
+  updated:
+    new Date().toISOString(),
+
+  releases: {},
 };
 
-for (const [slug, artistId] of Object.entries(ARTISTS)) {
+
+
+for (const [slug, id] of Object.entries(ARTISTS)) {
 
   console.log(`\n=== ${slug} ===`);
 
+
   try {
 
-    const list = await getArtistReleases(
-      token,
-      artistId
-    );
+    const artist =
+      await getArtist(
+        token,
+        id
+      );
 
-    releases.releases[slug] = list;
-
-    drops.drops[slug] = list[0] ?? null;
 
     console.log(
-      `✓ ${list.length} releases`
+      "Spotify name:",
+      artist.name
     );
 
-  } catch (err) {
 
-    console.error(err.message);
+    const officialRaw =
+      await getOfficialReleases(
+        token,
+        id
+      );
 
-    releases.releases[slug] = [];
+
+    const official =
+      cleanReleaseList(
+        officialRaw
+      );
+
+
+    let featured = [];
+
+
+    if (official.length === 0) {
+
+      console.log(
+        "No official releases. Searching features..."
+      );
+
+
+      featured =
+        cleanReleaseList(
+          await getFeaturedReleases(
+            token,
+            artist.name
+          )
+        );
+
+    }
+
+
+    releases.releases[slug] = {
+
+      spotifyName:
+        artist.name,
+
+      official,
+
+      featured,
+
+    };
+
+
+    drops.drops[slug] =
+      official[0] || null;
+
+
+    console.log(
+      `Official: ${official.length}`
+    );
+
+    console.log(
+      `Featured: ${featured.length}`
+    );
+
+
+  } catch (error) {
+
+    console.error(
+      `Failed ${slug}:`,
+      error.message
+    );
+
+
+    releases.releases[slug] = {
+
+      official: [],
+
+      featured: [],
+
+    };
+
 
     drops.drops[slug] = null;
 
@@ -173,14 +369,28 @@ for (const [slug, artistId] of Object.entries(ARTISTS)) {
 
 }
 
+
+
 writeFileSync(
   "drops.json",
-  JSON.stringify(drops, null, 2)
+  JSON.stringify(
+    drops,
+    null,
+    2
+  )
 );
+
 
 writeFileSync(
   "releases.json",
-  JSON.stringify(releases, null, 2)
+  JSON.stringify(
+    releases,
+    null,
+    2
+  )
 );
 
-console.log("\nDone.");
+
+console.log(
+  "\n✅ Spotify catalog update complete"
+);
