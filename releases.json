@@ -1,296 +1,329 @@
 {
-  "updated": "2026-07-29T15:09:43.286Z",
+  "updated": "2026-07-29T15:21:40.379Z",
   "releases": {
-    "turboslidechamp": [
-      {
-        "id": "0Iv1tUx4dvx1B9iLJYVfGa",
-        "title": "CHARLOTTE'S WEB",
-        "releaseDate": "2026-06-12",
-        "type": "single",
-        "url": "https://open.spotify.com/album/0Iv1tUx4dvx1B9iLJYVfGa",
-        "cover": "https://i.scdn.co/image/ab67616d0000b27338fe342e061682e793c75553"
-      },
-      {
-        "id": "0gpu0tH8y3AXlspkKZHA5g",
-        "title": "FEAR OF THE DARK",
-        "releaseDate": "2025-12-19",
-        "type": "single",
-        "url": "https://open.spotify.com/album/0gpu0tH8y3AXlspkKZHA5g",
-        "cover": "https://i.scdn.co/image/ab67616d0000b2731b2df1449c835cb8f5d4dafc"
-      },
-      {
-        "id": "5YxptD4FHDp6KwEkFX6xmL",
-        "title": "DREAMING ALL DAY",
-        "releaseDate": "2025-12-05",
-        "type": "single",
-        "url": "https://open.spotify.com/album/5YxptD4FHDp6KwEkFX6xmL",
-        "cover": "https://i.scdn.co/image/ab67616d0000b273d5dddc0b9994cde63d966d95"
-      },
-      {
-        "id": "6Q2nNlnXFu23toyM8lfRlt",
-        "title": "In No Time!",
-        "releaseDate": "2025-10-31",
-        "type": "single",
-        "url": "https://open.spotify.com/album/6Q2nNlnXFu23toyM8lfRlt",
-        "cover": "https://i.scdn.co/image/ab67616d0000b273c0321301422ebfcdc8024a29"
-      },
-      {
-        "id": "0Emf3EGhBCOUMR4cpa2QX7",
-        "title": "GIFTED PRODIGY",
-        "releaseDate": "2025-10-17",
-        "type": "single",
-        "url": "https://open.spotify.com/album/0Emf3EGhBCOUMR4cpa2QX7",
-        "cover": "https://i.scdn.co/image/ab67616d0000b2733ee7ee2b01d72275d3a37619"
-      },
-      {
-        "id": "2mfEqOx88TEv5SrYxXviKk",
-        "title": "theLost Creek Mixtape",
-        "releaseDate": "2025-06-27",
-        "type": "album",
-        "url": "https://open.spotify.com/album/2mfEqOx88TEv5SrYxXviKk",
-        "cover": "https://i.scdn.co/image/ab67616d0000b27382eae5d025a12d160523dd35"
-      },
-      {
-        "id": "3YbG7B0PQ0pBttXPmT6Lkc",
-        "title": "the great fruit war.",
-        "releaseDate": "2024-10-31",
-        "type": "single",
-        "url": "https://open.spotify.com/album/3YbG7B0PQ0pBttXPmT6Lkc",
-        "cover": "https://i.scdn.co/image/ab67616d0000b2738906c9519981fead27764cf9"
-      },
-      {
-        "id": "7H6etfp33dOFcrlDH9Zkz2",
-        "title": "Stories From My Brothers",
-        "releaseDate": "2024-09-27",
-        "type": "single",
-        "url": "https://open.spotify.com/album/7H6etfp33dOFcrlDH9Zkz2",
-        "cover": "https://i.scdn.co/image/ab67616d0000b273518c707ac017ba0b374a916e"
-      },
-      {
-        "id": "5cU3PGShs6iAyuuj6WX5FH",
-        "title": "no complications (demo)",
-        "releaseDate": "2024-05-24",
-        "type": "single",
-        "url": "https://open.spotify.com/album/5cU3PGShs6iAyuuj6WX5FH",
-        "cover": "https://i.scdn.co/image/ab67616d0000b273208bc1c6b5f0f56a218f92fe"
-      },
-      {
-        "id": "6ve7hW0PwDRGFcciJRpZyE",
-        "title": "DROUGHT: RUNNERS EDITION, TAPE 2",
-        "releaseDate": "2024-02-23",
-        "type": "album",
-        "url": "https://open.spotify.com/album/6ve7hW0PwDRGFcciJRpZyE",
-        "cover": "https://i.scdn.co/image/ab67616d0000b273cd8bbdd7a231d012acc5bf2c"
-      }
-    ],
-    "pkcentral": [
-      {
-        "id": "5A6sbyNJaPiy5HlXxoJulE",
-        "title": "Desperate (REMIX)",
-        "releaseDate": "2026-05-22",
-        "type": "single",
-        "url": "https://open.spotify.com/album/5A6sbyNJaPiy5HlXxoJulE",
-        "cover": "https://i.scdn.co/image/ab67616d0000b2734acf0f1733726e0a06422056"
-      },
-      {
-        "id": "0DF9FTGEGFg8PwGu9j6Ibt",
-        "title": "Reminiscent",
-        "releaseDate": "2026-05-01",
-        "type": "single",
-        "url": "https://open.spotify.com/album/0DF9FTGEGFg8PwGu9j6Ibt",
-        "cover": "https://i.scdn.co/image/ab67616d0000b273341810ba33fea02bc951d209"
-      },
-      {
-        "id": "5gxgADLmKnI5nO1S3Nxl5f",
-        "title": "Desperate",
-        "releaseDate": "2026-04-24",
-        "type": "single",
-        "url": "https://open.spotify.com/album/5gxgADLmKnI5nO1S3Nxl5f",
-        "cover": "https://i.scdn.co/image/ab67616d0000b273e116f346c8121417680ebf3e"
-      },
-      {
-        "id": "2NGsINgqRHbXoSjgYbrvv4",
-        "title": "No More Love",
-        "releaseDate": "2026-03-13",
-        "type": "single",
-        "url": "https://open.spotify.com/album/2NGsINgqRHbXoSjgYbrvv4",
-        "cover": "https://i.scdn.co/image/ab67616d0000b27332166b2982192736b18ca1a6"
-      },
-      {
-        "id": "17Be6AaoTgGi7cSZ4tSVD0",
-        "title": "Court Side View",
-        "releaseDate": "2026-02-27",
-        "type": "single",
-        "url": "https://open.spotify.com/album/17Be6AaoTgGi7cSZ4tSVD0",
-        "cover": "https://i.scdn.co/image/ab67616d0000b273f606ea282a27ed734489a07c"
-      }
-    ],
-    "e-the-experience": [
-      {
-        "id": "2TghdNCzYThfDoZVWIjizq",
-        "title": "Roses On My Rosary",
-        "releaseDate": "2026-06-26",
-        "type": "album",
-        "url": "https://open.spotify.com/album/2TghdNCzYThfDoZVWIjizq",
-        "cover": "https://i.scdn.co/image/ab67616d0000b2733163116243efb83c270af901"
-      },
-      {
-        "id": "0CDgQkFebDj1XqrRzVW6kf",
-        "title": "Ban You",
-        "releaseDate": "2026-06-12",
-        "type": "single",
-        "url": "https://open.spotify.com/album/0CDgQkFebDj1XqrRzVW6kf",
-        "cover": "https://i.scdn.co/image/ab67616d0000b273dd84555933c81c1d2f844b81"
-      },
-      {
-        "id": "2A0AruyM7vUiziCSru2Waz",
-        "title": "Versus Everything",
-        "releaseDate": "2026-05-01",
-        "type": "single",
-        "url": "https://open.spotify.com/album/2A0AruyM7vUiziCSru2Waz",
-        "cover": "https://i.scdn.co/image/ab67616d0000b273c4aba15fc96b87908c7304f1"
-      },
-      {
-        "id": "4EBsbFONObCOlsb9fmWiMR",
-        "title": "Versace Shades",
-        "releaseDate": "2026-03-21",
-        "type": "single",
-        "url": "https://open.spotify.com/album/4EBsbFONObCOlsb9fmWiMR",
-        "cover": "https://i.scdn.co/image/ab67616d0000b2731a75b7c36fc482c66fd53004"
-      },
-      {
-        "id": "6YvVktOUKLdu7Z0ZhWPbA1",
-        "title": "MEDS",
-        "releaseDate": "2026-02-27",
-        "type": "single",
-        "url": "https://open.spotify.com/album/6YvVktOUKLdu7Z0ZhWPbA1",
-        "cover": "https://i.scdn.co/image/ab67616d0000b2732f6405a1c8d183f6ee071d71"
-      },
-      {
-        "id": "6u51C1Qd75g74iFtXfgKYR",
-        "title": "Stunning",
-        "releaseDate": "2026-01-31",
-        "type": "single",
-        "url": "https://open.spotify.com/album/6u51C1Qd75g74iFtXfgKYR",
-        "cover": "https://i.scdn.co/image/ab67616d0000b27372cf2731f879436480c5e487"
-      },
-      {
-        "id": "6xnxYEliAEuQyasorxUkMZ",
-        "title": "Jungle Boys",
-        "releaseDate": "2026-01-12",
-        "type": "single",
-        "url": "https://open.spotify.com/album/6xnxYEliAEuQyasorxUkMZ",
-        "cover": "https://i.scdn.co/image/ab67616d0000b2732a7c8ee876951bb2e5bab6ab"
-      },
-      {
-        "id": "78C4CeOMs9guqL2wVAqh1t",
-        "title": "SAINT",
-        "releaseDate": "2025-12-06",
-        "type": "single",
-        "url": "https://open.spotify.com/album/78C4CeOMs9guqL2wVAqh1t",
-        "cover": "https://i.scdn.co/image/ab67616d0000b273b04bb0f3a447b69a3332a330"
-      },
-      {
-        "id": "3tBithb6JXCOQVM5fe78Cg",
-        "title": "Don't Trip Over Luv",
-        "releaseDate": "2025-06-14",
-        "type": "album",
-        "url": "https://open.spotify.com/album/3tBithb6JXCOQVM5fe78Cg",
-        "cover": "https://i.scdn.co/image/ab67616d0000b2737c5e48f15ffd53e9942d43dc"
-      },
-      {
-        "id": "1EzKMzefKi2SyltBXKLepf",
-        "title": "Vibez",
-        "releaseDate": "2025-05-24",
-        "type": "single",
-        "url": "https://open.spotify.com/album/1EzKMzefKi2SyltBXKLepf",
-        "cover": "https://i.scdn.co/image/ab67616d0000b2737b5518eefd1a9ee49a1bf640"
-      },
-      {
-        "id": "0pprLsSpkDodR2R6J8euui",
-        "title": "Never Go Back",
-        "releaseDate": "2025-03-19",
-        "type": "single",
-        "url": "https://open.spotify.com/album/0pprLsSpkDodR2R6J8euui",
-        "cover": "https://i.scdn.co/image/ab67616d0000b27382c0c7c4bb9d6d05a632eb4a"
-      },
-      {
-        "id": "72fDJbiEgyS9eIBMp0qOER",
-        "title": "Bless The Ex",
-        "releaseDate": "2024-12-14",
-        "type": "album",
-        "url": "https://open.spotify.com/album/72fDJbiEgyS9eIBMp0qOER",
-        "cover": "https://i.scdn.co/image/ab67616d0000b2739a06c060fa7cb1cf9fb35a9c"
-      },
-      {
-        "id": "1vXmdkV3ffTDI7zwIqKY28",
-        "title": "Got Her Name",
-        "releaseDate": "2024-08-30",
-        "type": "single",
-        "url": "https://open.spotify.com/album/1vXmdkV3ffTDI7zwIqKY28",
-        "cover": "https://i.scdn.co/image/ab67616d0000b273278d5d2bb001b93912d7e4d2"
-      },
-      {
-        "id": "6rgfTRWZSG2jovoYiOVBIx",
-        "title": "Drive",
-        "releaseDate": "2024-03-08",
-        "type": "single",
-        "url": "https://open.spotify.com/album/6rgfTRWZSG2jovoYiOVBIx",
-        "cover": "https://i.scdn.co/image/ab67616d0000b273e4cbda5d306bd7d642c6be39"
-      },
-      {
-        "id": "4QQWNhLuGwW7h645HVvrKb",
-        "title": "Lips",
-        "releaseDate": "2024-02-09",
-        "type": "single",
-        "url": "https://open.spotify.com/album/4QQWNhLuGwW7h645HVvrKb",
-        "cover": "https://i.scdn.co/image/ab67616d0000b2733b851e9142019c02ee95a405"
-      },
-      {
-        "id": "6Wt1GcfTp6SUykMxYbV8td",
-        "title": "Heart",
-        "releaseDate": "2023-09-22",
-        "type": "single",
-        "url": "https://open.spotify.com/album/6Wt1GcfTp6SUykMxYbV8td",
-        "cover": "https://i.scdn.co/image/ab67616d0000b273b788cfc117fe9e4fabe32c8d"
-      },
-      {
-        "id": "4vGJyHPicghei9unzs4rHT",
-        "title": "Run!",
-        "releaseDate": "2023-09-08",
-        "type": "single",
-        "url": "https://open.spotify.com/album/4vGJyHPicghei9unzs4rHT",
-        "cover": "https://i.scdn.co/image/ab67616d0000b273d7970880817c258dae483131"
-      },
-      {
-        "id": "5chQXDMucyxxkxsHwhQKkR",
-        "title": "Sick",
-        "releaseDate": "2022-01-22",
-        "type": "single",
-        "url": "https://open.spotify.com/album/5chQXDMucyxxkxsHwhQKkR",
-        "cover": "https://i.scdn.co/image/ab67616d0000b273fce05eb43e5593c3f2d22a67"
-      }
-    ],
-    "00hunnid": [],
-    "ura": [
-      {
-        "id": "3kpbFf05PNFjNo0BYT3oD4",
-        "title": "Solo",
-        "releaseDate": "2026-04-15",
-        "type": "single",
-        "url": "https://open.spotify.com/album/3kpbFf05PNFjNo0BYT3oD4",
-        "cover": "https://i.scdn.co/image/ab67616d0000b27329dea60d49294887c725c926"
-      }
-    ],
-    "creekbay": [
-      {
-        "id": "6cMAzmQKk5FxHTbQa9XOnx",
-        "title": "TALES FROM THE CREEK",
-        "releaseDate": "2026-04-05",
-        "type": "album",
-        "url": "https://open.spotify.com/album/6cMAzmQKk5FxHTbQa9XOnx",
-        "cover": "https://i.scdn.co/image/ab67616d0000b2738b189ba62ac94f0c52bf024a"
-      }
-    ]
+    "turboslidechamp": {
+      "spotifyName": "turboslidechamp",
+      "official": [
+        {
+          "id": "0Iv1tUx4dvx1B9iLJYVfGa",
+          "title": "CHARLOTTE'S WEB",
+          "releaseDate": "2026-06-12",
+          "type": "single",
+          "cover": "https://i.scdn.co/image/ab67616d0000b27338fe342e061682e793c75553",
+          "url": "https://open.spotify.com/album/0Iv1tUx4dvx1B9iLJYVfGa"
+        },
+        {
+          "id": "0gpu0tH8y3AXlspkKZHA5g",
+          "title": "FEAR OF THE DARK",
+          "releaseDate": "2025-12-19",
+          "type": "single",
+          "cover": "https://i.scdn.co/image/ab67616d0000b2731b2df1449c835cb8f5d4dafc",
+          "url": "https://open.spotify.com/album/0gpu0tH8y3AXlspkKZHA5g"
+        },
+        {
+          "id": "5YxptD4FHDp6KwEkFX6xmL",
+          "title": "DREAMING ALL DAY",
+          "releaseDate": "2025-12-05",
+          "type": "single",
+          "cover": "https://i.scdn.co/image/ab67616d0000b273d5dddc0b9994cde63d966d95",
+          "url": "https://open.spotify.com/album/5YxptD4FHDp6KwEkFX6xmL"
+        },
+        {
+          "id": "6Q2nNlnXFu23toyM8lfRlt",
+          "title": "In No Time!",
+          "releaseDate": "2025-10-31",
+          "type": "single",
+          "cover": "https://i.scdn.co/image/ab67616d0000b273c0321301422ebfcdc8024a29",
+          "url": "https://open.spotify.com/album/6Q2nNlnXFu23toyM8lfRlt"
+        },
+        {
+          "id": "0Emf3EGhBCOUMR4cpa2QX7",
+          "title": "GIFTED PRODIGY",
+          "releaseDate": "2025-10-17",
+          "type": "single",
+          "cover": "https://i.scdn.co/image/ab67616d0000b2733ee7ee2b01d72275d3a37619",
+          "url": "https://open.spotify.com/album/0Emf3EGhBCOUMR4cpa2QX7"
+        },
+        {
+          "id": "2mfEqOx88TEv5SrYxXviKk",
+          "title": "theLost Creek Mixtape",
+          "releaseDate": "2025-06-27",
+          "type": "album",
+          "cover": "https://i.scdn.co/image/ab67616d0000b27382eae5d025a12d160523dd35",
+          "url": "https://open.spotify.com/album/2mfEqOx88TEv5SrYxXviKk"
+        },
+        {
+          "id": "3YbG7B0PQ0pBttXPmT6Lkc",
+          "title": "the great fruit war.",
+          "releaseDate": "2024-10-31",
+          "type": "single",
+          "cover": "https://i.scdn.co/image/ab67616d0000b2738906c9519981fead27764cf9",
+          "url": "https://open.spotify.com/album/3YbG7B0PQ0pBttXPmT6Lkc"
+        },
+        {
+          "id": "7H6etfp33dOFcrlDH9Zkz2",
+          "title": "Stories From My Brothers",
+          "releaseDate": "2024-09-27",
+          "type": "single",
+          "cover": "https://i.scdn.co/image/ab67616d0000b273518c707ac017ba0b374a916e",
+          "url": "https://open.spotify.com/album/7H6etfp33dOFcrlDH9Zkz2"
+        },
+        {
+          "id": "5cU3PGShs6iAyuuj6WX5FH",
+          "title": "no complications (demo)",
+          "releaseDate": "2024-05-24",
+          "type": "single",
+          "cover": "https://i.scdn.co/image/ab67616d0000b273208bc1c6b5f0f56a218f92fe",
+          "url": "https://open.spotify.com/album/5cU3PGShs6iAyuuj6WX5FH"
+        },
+        {
+          "id": "6ve7hW0PwDRGFcciJRpZyE",
+          "title": "DROUGHT: RUNNERS EDITION, TAPE 2",
+          "releaseDate": "2024-02-23",
+          "type": "album",
+          "cover": "https://i.scdn.co/image/ab67616d0000b273cd8bbdd7a231d012acc5bf2c",
+          "url": "https://open.spotify.com/album/6ve7hW0PwDRGFcciJRpZyE"
+        }
+      ],
+      "featured": []
+    },
+    "pkcentral": {
+      "spotifyName": "pkcentraL",
+      "official": [
+        {
+          "id": "5A6sbyNJaPiy5HlXxoJulE",
+          "title": "Desperate (REMIX)",
+          "releaseDate": "2026-05-22",
+          "type": "single",
+          "cover": "https://i.scdn.co/image/ab67616d0000b2734acf0f1733726e0a06422056",
+          "url": "https://open.spotify.com/album/5A6sbyNJaPiy5HlXxoJulE"
+        },
+        {
+          "id": "0DF9FTGEGFg8PwGu9j6Ibt",
+          "title": "Reminiscent",
+          "releaseDate": "2026-05-01",
+          "type": "single",
+          "cover": "https://i.scdn.co/image/ab67616d0000b273341810ba33fea02bc951d209",
+          "url": "https://open.spotify.com/album/0DF9FTGEGFg8PwGu9j6Ibt"
+        },
+        {
+          "id": "5gxgADLmKnI5nO1S3Nxl5f",
+          "title": "Desperate",
+          "releaseDate": "2026-04-24",
+          "type": "single",
+          "cover": "https://i.scdn.co/image/ab67616d0000b273e116f346c8121417680ebf3e",
+          "url": "https://open.spotify.com/album/5gxgADLmKnI5nO1S3Nxl5f"
+        },
+        {
+          "id": "2NGsINgqRHbXoSjgYbrvv4",
+          "title": "No More Love",
+          "releaseDate": "2026-03-13",
+          "type": "single",
+          "cover": "https://i.scdn.co/image/ab67616d0000b27332166b2982192736b18ca1a6",
+          "url": "https://open.spotify.com/album/2NGsINgqRHbXoSjgYbrvv4"
+        },
+        {
+          "id": "17Be6AaoTgGi7cSZ4tSVD0",
+          "title": "Court Side View",
+          "releaseDate": "2026-02-27",
+          "type": "single",
+          "cover": "https://i.scdn.co/image/ab67616d0000b273f606ea282a27ed734489a07c",
+          "url": "https://open.spotify.com/album/17Be6AaoTgGi7cSZ4tSVD0"
+        }
+      ],
+      "featured": []
+    },
+    "e-the-experience": {
+      "spotifyName": "E The Experience",
+      "official": [
+        {
+          "id": "2TghdNCzYThfDoZVWIjizq",
+          "title": "Roses On My Rosary",
+          "releaseDate": "2026-06-26",
+          "type": "album",
+          "cover": "https://i.scdn.co/image/ab67616d0000b2733163116243efb83c270af901",
+          "url": "https://open.spotify.com/album/2TghdNCzYThfDoZVWIjizq"
+        },
+        {
+          "id": "0CDgQkFebDj1XqrRzVW6kf",
+          "title": "Ban You",
+          "releaseDate": "2026-06-12",
+          "type": "single",
+          "cover": "https://i.scdn.co/image/ab67616d0000b273dd84555933c81c1d2f844b81",
+          "url": "https://open.spotify.com/album/0CDgQkFebDj1XqrRzVW6kf"
+        },
+        {
+          "id": "2A0AruyM7vUiziCSru2Waz",
+          "title": "Versus Everything",
+          "releaseDate": "2026-05-01",
+          "type": "single",
+          "cover": "https://i.scdn.co/image/ab67616d0000b273c4aba15fc96b87908c7304f1",
+          "url": "https://open.spotify.com/album/2A0AruyM7vUiziCSru2Waz"
+        },
+        {
+          "id": "4EBsbFONObCOlsb9fmWiMR",
+          "title": "Versace Shades",
+          "releaseDate": "2026-03-21",
+          "type": "single",
+          "cover": "https://i.scdn.co/image/ab67616d0000b2731a75b7c36fc482c66fd53004",
+          "url": "https://open.spotify.com/album/4EBsbFONObCOlsb9fmWiMR"
+        },
+        {
+          "id": "6YvVktOUKLdu7Z0ZhWPbA1",
+          "title": "MEDS",
+          "releaseDate": "2026-02-27",
+          "type": "single",
+          "cover": "https://i.scdn.co/image/ab67616d0000b2732f6405a1c8d183f6ee071d71",
+          "url": "https://open.spotify.com/album/6YvVktOUKLdu7Z0ZhWPbA1"
+        },
+        {
+          "id": "6u51C1Qd75g74iFtXfgKYR",
+          "title": "Stunning",
+          "releaseDate": "2026-01-31",
+          "type": "single",
+          "cover": "https://i.scdn.co/image/ab67616d0000b27372cf2731f879436480c5e487",
+          "url": "https://open.spotify.com/album/6u51C1Qd75g74iFtXfgKYR"
+        },
+        {
+          "id": "6xnxYEliAEuQyasorxUkMZ",
+          "title": "Jungle Boys",
+          "releaseDate": "2026-01-12",
+          "type": "single",
+          "cover": "https://i.scdn.co/image/ab67616d0000b2732a7c8ee876951bb2e5bab6ab",
+          "url": "https://open.spotify.com/album/6xnxYEliAEuQyasorxUkMZ"
+        },
+        {
+          "id": "78C4CeOMs9guqL2wVAqh1t",
+          "title": "SAINT",
+          "releaseDate": "2025-12-06",
+          "type": "single",
+          "cover": "https://i.scdn.co/image/ab67616d0000b273b04bb0f3a447b69a3332a330",
+          "url": "https://open.spotify.com/album/78C4CeOMs9guqL2wVAqh1t"
+        },
+        {
+          "id": "3tBithb6JXCOQVM5fe78Cg",
+          "title": "Don't Trip Over Luv",
+          "releaseDate": "2025-06-14",
+          "type": "album",
+          "cover": "https://i.scdn.co/image/ab67616d0000b2737c5e48f15ffd53e9942d43dc",
+          "url": "https://open.spotify.com/album/3tBithb6JXCOQVM5fe78Cg"
+        },
+        {
+          "id": "1EzKMzefKi2SyltBXKLepf",
+          "title": "Vibez",
+          "releaseDate": "2025-05-24",
+          "type": "single",
+          "cover": "https://i.scdn.co/image/ab67616d0000b2737b5518eefd1a9ee49a1bf640",
+          "url": "https://open.spotify.com/album/1EzKMzefKi2SyltBXKLepf"
+        },
+        {
+          "id": "0pprLsSpkDodR2R6J8euui",
+          "title": "Never Go Back",
+          "releaseDate": "2025-03-19",
+          "type": "single",
+          "cover": "https://i.scdn.co/image/ab67616d0000b27382c0c7c4bb9d6d05a632eb4a",
+          "url": "https://open.spotify.com/album/0pprLsSpkDodR2R6J8euui"
+        },
+        {
+          "id": "72fDJbiEgyS9eIBMp0qOER",
+          "title": "Bless The Ex",
+          "releaseDate": "2024-12-14",
+          "type": "album",
+          "cover": "https://i.scdn.co/image/ab67616d0000b2739a06c060fa7cb1cf9fb35a9c",
+          "url": "https://open.spotify.com/album/72fDJbiEgyS9eIBMp0qOER"
+        },
+        {
+          "id": "1vXmdkV3ffTDI7zwIqKY28",
+          "title": "Got Her Name",
+          "releaseDate": "2024-08-30",
+          "type": "single",
+          "cover": "https://i.scdn.co/image/ab67616d0000b273278d5d2bb001b93912d7e4d2",
+          "url": "https://open.spotify.com/album/1vXmdkV3ffTDI7zwIqKY28"
+        },
+        {
+          "id": "6rgfTRWZSG2jovoYiOVBIx",
+          "title": "Drive",
+          "releaseDate": "2024-03-08",
+          "type": "single",
+          "cover": "https://i.scdn.co/image/ab67616d0000b273e4cbda5d306bd7d642c6be39",
+          "url": "https://open.spotify.com/album/6rgfTRWZSG2jovoYiOVBIx"
+        },
+        {
+          "id": "4QQWNhLuGwW7h645HVvrKb",
+          "title": "Lips",
+          "releaseDate": "2024-02-09",
+          "type": "single",
+          "cover": "https://i.scdn.co/image/ab67616d0000b2733b851e9142019c02ee95a405",
+          "url": "https://open.spotify.com/album/4QQWNhLuGwW7h645HVvrKb"
+        },
+        {
+          "id": "6Wt1GcfTp6SUykMxYbV8td",
+          "title": "Heart",
+          "releaseDate": "2023-09-22",
+          "type": "single",
+          "cover": "https://i.scdn.co/image/ab67616d0000b273b788cfc117fe9e4fabe32c8d",
+          "url": "https://open.spotify.com/album/6Wt1GcfTp6SUykMxYbV8td"
+        },
+        {
+          "id": "4vGJyHPicghei9unzs4rHT",
+          "title": "Run!",
+          "releaseDate": "2023-09-08",
+          "type": "single",
+          "cover": "https://i.scdn.co/image/ab67616d0000b273d7970880817c258dae483131",
+          "url": "https://open.spotify.com/album/4vGJyHPicghei9unzs4rHT"
+        },
+        {
+          "id": "5chQXDMucyxxkxsHwhQKkR",
+          "title": "Sick",
+          "releaseDate": "2022-01-22",
+          "type": "single",
+          "cover": "https://i.scdn.co/image/ab67616d0000b273fce05eb43e5593c3f2d22a67",
+          "url": "https://open.spotify.com/album/5chQXDMucyxxkxsHwhQKkR"
+        }
+      ],
+      "featured": []
+    },
+    "00hunnid": {
+      "spotifyName": "00HUNNID",
+      "official": [],
+      "featured": [
+        {
+          "id": "6cMAzmQKk5FxHTbQa9XOnx",
+          "title": "TALES FROM THE CREEK",
+          "releaseDate": "2026-04-05",
+          "type": "album",
+          "cover": "https://i.scdn.co/image/ab67616d0000b2738b189ba62ac94f0c52bf024a",
+          "url": "https://open.spotify.com/album/6cMAzmQKk5FxHTbQa9XOnx"
+        }
+      ]
+    },
+    "ura": {
+      "spotifyName": "URA",
+      "official": [
+        {
+          "id": "3kpbFf05PNFjNo0BYT3oD4",
+          "title": "Solo",
+          "releaseDate": "2026-04-15",
+          "type": "single",
+          "cover": "https://i.scdn.co/image/ab67616d0000b27329dea60d49294887c725c926",
+          "url": "https://open.spotify.com/album/3kpbFf05PNFjNo0BYT3oD4"
+        }
+      ],
+      "featured": []
+    },
+    "creekbay": {
+      "spotifyName": "Creek Bay Records",
+      "official": [
+        {
+          "id": "6cMAzmQKk5FxHTbQa9XOnx",
+          "title": "TALES FROM THE CREEK",
+          "releaseDate": "2026-04-05",
+          "type": "album",
+          "cover": "https://i.scdn.co/image/ab67616d0000b2738b189ba62ac94f0c52bf024a",
+          "url": "https://open.spotify.com/album/6cMAzmQKk5FxHTbQa9XOnx"
+        }
+      ],
+      "featured": []
+    }
   }
 }
