@@ -47,24 +47,31 @@
   .pk-hero{position:relative;height:100svh;overflow:hidden;border-bottom:1px solid var(--line-d);padding:0}
   .pk-hero .back{position:absolute;top:calc(var(--bar) + 24px);left:clamp(20px,5vw,60px);z-index:3}
   .pk-hero .m-eyebrow{position:absolute;top:calc(var(--bar) + 24px);right:clamp(20px,5vw,60px);z-index:3;margin:0}
-  .dvd{position:absolute;top:0;left:0;z-index:2;width:clamp(150px,26vw,320px);will-change:left,top,opacity;animation:dvdFade 12s ease-in-out infinite}
+  .dvd{position:absolute;top:0;left:0;z-index:65;width:clamp(150px,26vw,320px);will-change:left,top,opacity;animation:dvdFade 20s linear infinite}
   .dvd img{width:100%;display:block}
   .pk-hint{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--ash)}
   .pk-bg{position:absolute;inset:0;z-index:0;overflow:hidden;background:#0F0F0E}
   .pk-bg img{width:100%;height:100%;object-fit:cover;object-position:center 70%;opacity:.65}
   @media (min-width:768px){
     .pk-bg{background:#0B0B0B;display:flex;align-items:center;justify-content:center}
-    .pk-bg img{object-fit:contain;object-position:center;opacity:.7;width:auto;height:100%;max-width:56%;flex-shrink:0}
+    .pk-bg img{object-fit:cover;object-position:center bottom;opacity:.7;width:93.75svh;max-width:92%;flex-shrink:0;height:100%}
   }
   /* flanking PK logos on desktop */
   .pk-flank{display:none}
+  .pk-accent{display:none}
   @media (min-width:900px){
-    .pk-flank{display:block;position:absolute;top:50%;z-index:2;width:clamp(80px,10vw,140px);opacity:.18;pointer-events:none;filter:invert(1)}
-    .pk-flank.left{left:clamp(8px,2vw,28px);transform:translateY(-50%)}
-    .pk-flank.right{right:clamp(8px,2vw,28px);transform:translateY(-50%) scaleX(-1)}
+    /* Photo cropped to bottom 60%: render width = 93.75svh -> side = 50vw - 46.875svh */
+    .pk-accent{display:block;position:absolute;z-index:2;width:calc(50% - 46.875svh);background:#071B4A;overflow:hidden}
+    .pk-ac-bl{left:0;bottom:0;height:50%}
+    .pk-ac-tr{right:0;top:0;height:50%}
+    .pk-wave{width:100%;height:100%;display:block}
+    .pk-flank{display:flex;align-items:center;justify-content:center;position:absolute;z-index:3;width:calc(50% - 46.875svh);pointer-events:none}
+    .pk-fl-tl{top:0;left:0;height:50%}
+    .pk-fl-br{bottom:0;right:0;height:50%}
+    .pk-fl-tl img,.pk-fl-br img{width:80%;max-width:200px;opacity:.3;filter:invert(1)}
   }
   .pk-hero .back,.pk-hero .m-eyebrow,.pk-hint{z-index:2}
-  @keyframes dvdFade{0%{opacity:0}4%{opacity:1}46%{opacity:1}50%{opacity:0}100%{opacity:0}}
+  @keyframes dvdFade{0%{opacity:0}5%{opacity:.75}65%{opacity:.75}75%{opacity:0}100%{opacity:0}}
 
   .m-sec{padding:clamp(52px,8vh,92px) 0;border-bottom:1px solid var(--line-d)}
   .m-label{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--ash);margin-bottom:30px}
@@ -170,21 +177,35 @@
   @keyframes lwSilk{0%{transform:translateX(-50%) scaleY(1)}66%{transform:translateX(-50%) scaleY(.145)}80%{transform:translateX(-50%) scaleY(.145)}100%{transform:translateX(-50%) scaleY(1)}}
   @keyframes lwLegs{from{transform:rotate(-1.7deg) scaleY(.99)}to{transform:rotate(1.7deg) scaleY(1.01)}}
   @media (prefers-reduced-motion:reduce){.lw-threads line,.lw-threads path{animation:none;opacity:.55}.lw-silk{animation:none;transform:translateX(-50%) scaleY(.56)}.lw-spider{animation:none;transform:translate(-50%,96px)}.lw-legs{animation:none}}
-  /* ===== 00Hunnid keyboard hero ===== */
-  .hd-kb-wrap{position:relative;z-index:3;display:flex;flex-direction:column;align-items:center;padding:clamp(90px,14vh,160px) 20px clamp(30px,4vh,56px);background:transparent}
-  .hd-kb{width:min(96vw,580px);cursor:pointer;-webkit-tap-highlight-color:transparent}
-  .kb-base{fill:#111210;stroke:#2a2a28;stroke-width:1}
-  .key-body{fill:#1c1c1a;stroke:#333330;stroke-width:1;transition:fill .06s,transform .06s;transform-origin:50% 100%}
-  .key-shine{fill:rgba(255,255,255,.04)}
-  .key-label{font-family:"AppleGaramond",Georgia,serif;font-size:16px;font-weight:700;fill:#b0ad9f;text-anchor:middle;dominant-baseline:middle;user-select:none;pointer-events:none}
-  .key--space .key-body{fill:#181816}
-  /* pressed state */
-  .key--pressed .key-body{fill:#DE7A1C;stroke:#f09040;transform:scaleY(.88) translateY(3px)}
-  .key--pressed .key-label{fill:#fff}
-  .key--pressed .key-shine{fill:rgba(255,255,255,.18)}
-  .hd-hint{font-family:"Archivo",sans-serif;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--ash);margin-top:18px;opacity:.6}
-  @media (hover:none){.hd-hint{display:none}}
-  @media (prefers-reduced-motion:reduce){.key-body{transition:none}}
+  /* ===== 00Hunnid FL Studio MIDI hero ===== */
+  .hd-studio{position:relative;z-index:3;width:100%;padding:clamp(72px,10vh,120px) 0 0;background:transparent;display:flex;flex-direction:column;align-items:center;gap:0}
+  .hd-top-rack{width:min(98vw,860px);background:#131313;border:1px solid #2a2a2a;border-bottom:none;border-radius:10px 10px 0 0;padding:18px 22px 14px;display:flex;align-items:center;gap:20px}
+  .hd-rack-label{font-family:"Archivo",sans-serif;font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:#555;white-space:nowrap;min-width:72px;line-height:1.6;text-align:center}
+  .hd-knobs{display:flex;gap:14px;align-items:flex-end;flex:1}
+  .hd-knob-group{display:flex;flex-direction:column;align-items:center;gap:5px}
+  .hd-knob{width:52px;height:52px}
+  .kn-cv{width:52px;height:52px;display:block}
+  .hd-kn-label{font-family:"Archivo",sans-serif;font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:#444;text-align:center}
+  .hd-display{background:#0a1a0a;border:1px solid #1a2a1a;border-radius:6px;padding:10px 16px;min-width:130px;text-align:center}
+  .hd-disp-title{font-family:"AppleGaramond",Georgia,serif;font-weight:700;font-size:18px;color:#00ff44;letter-spacing:.08em;line-height:1}
+  .hd-disp-sub{font-family:"Archivo",sans-serif;font-size:7px;letter-spacing:.22em;text-transform:uppercase;color:#007a22;margin-top:4px}
+  .hd-leds{display:flex;gap:5px;margin-top:8px;justify-content:center}
+  .hd-led{width:6px;height:6px;border-radius:50%;background:#111;border:1px solid #222;transition:background .1s}
+  .hd-led.hd-led-on{background:#DE7A1C;box-shadow:0 0 4px #DE7A1C}
+  /* keyboard body */
+  .hd-keyboard{width:min(98vw,860px);background:#0e0e0e;border:1px solid #2a2a2a;border-top:3px solid #222;padding:22px 16px 26px;position:relative}
+  .hd-keys{position:relative;height:140px;display:flex;user-select:none}
+  .hd-white{flex:1;height:100%;background:linear-gradient(to bottom,#d8d4cc,#f0ece4);border:1px solid #999;border-top:none;border-radius:0 0 5px 5px;position:relative;transition:background .08s}
+  .hd-white+.hd-white{border-left:none}
+  .hd-white.hd-lit{background:linear-gradient(to bottom,#f5a94a,#DE7A1C);box-shadow:inset 0 -4px 8px rgba(222,122,28,.6)}
+  .hd-black{position:absolute;top:0;width:2.8%;height:61%;background:linear-gradient(to bottom,#1a1a1a,#0a0a0a);border-radius:0 0 4px 4px;border:1px solid #000;z-index:2;transition:background .08s}
+  .hd-black.hd-lit-b{background:linear-gradient(to bottom,#c96800,#a05000);box-shadow:0 4px 10px rgba(222,122,28,.8)}
+  /* pads */
+  .hd-pads{width:min(98vw,860px);background:#111;border:1px solid #2a2a2a;border-top:none;border-radius:0 0 10px 10px;padding:16px;display:grid;grid-template-columns:repeat(8,1fr);gap:10px}
+  .hd-pad{height:52px;background:#1c1c1c;border:1px solid #2e2e2e;border-radius:5px;border-bottom:3px solid #0a0a0a;transition:background .08s,box-shadow .08s}
+  .hd-pad.hd-pad-lit{background:#DE7A1C;border-color:#f09040;box-shadow:0 0 12px rgba(222,122,28,.7)}
+  @media(max-width:640px){.hd-studio{display:none}}
+  @media(prefers-reduced-motion:reduce){.hd-white,.hd-black,.hd-pad{transition:none}}
 
   footer{position:relative;z-index:1;padding:clamp(50px,8vh,90px) 0 44px;text-align:center}
   .foot-logo{width:150px;margin:0 auto 24px}
@@ -371,6 +392,44 @@
     .then(function(r){return r.json();})
     .then(function(d){render(d.releases&&d.releases[slug]);})
     .catch(function(){render(null);});
+})();
+</script>
+<script>
+(function(){
+  if(window.innerWidth<900) return;
+  function startWave(cv,idx){
+    var ctx=cv.getContext('2d'); if(!ctx) return;
+    var W=0,H=0,t=0,bars=22,seed=idx===0?0.7:1.3,running=false;
+    function setSize(p){
+      W=p.contentRect?Math.round(p.contentRect.width):cv.parentElement.offsetWidth;
+      H=p.contentRect?Math.round(p.contentRect.height):cv.parentElement.offsetHeight;
+      if(!W||!H) return;
+      cv.width=Math.round(W*(window.devicePixelRatio||1));
+      cv.height=Math.round(H*(window.devicePixelRatio||1));
+      ctx.setTransform(window.devicePixelRatio||1,0,0,window.devicePixelRatio||1,0,0);
+      if(!running){running=true;draw();}
+    }
+    function draw(){
+      t+=0.02; ctx.clearRect(0,0,W,H);
+      var bw=W/bars,gap=bw*0.3,bw2=Math.max(2,bw-gap);
+      for(var i=0;i<bars;i++){
+        var phase=i/bars*Math.PI*2;
+        var amp=(Math.sin(t*1.1+phase+seed)+Math.sin(t*0.65+phase*1.5))*0.5;
+        var h=Math.max(3,(0.5+amp*0.44)*H*0.74);
+        var x=i*bw+gap/2,y=(H-h)/2;
+        ctx.fillStyle='rgba(0,0,0,'+(0.3+Math.abs(amp)*0.5).toFixed(2)+')';
+        ctx.fillRect(x,y,bw2,h);
+      }
+      requestAnimationFrame(draw);
+    }
+    // ResizeObserver fires as soon as the element has real dimensions
+    if(window.ResizeObserver){
+      new ResizeObserver(function(entries){setSize(entries[0]);}).observe(cv.parentElement);
+    } else {
+      window.addEventListener('load',function(){setSize({});});
+    }
+  }
+  document.querySelectorAll('.pk-wave').forEach(startWave);
 })();
 </script>
 
