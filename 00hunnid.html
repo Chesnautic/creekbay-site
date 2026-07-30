@@ -52,7 +52,17 @@
   .pk-hint{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--ash)}
   .pk-bg{position:absolute;inset:0;z-index:0;overflow:hidden;background:#0F0F0E}
   .pk-bg img{width:100%;height:100%;object-fit:cover;object-position:center 70%;opacity:.65}
-  @media (min-width:768px){.pk-bg{background:#0B0B0B}.pk-bg img{object-fit:contain;object-position:center center;opacity:.7;width:auto;height:100%;max-width:60%;margin:0 auto;display:block;left:50%;transform:translateX(-50%);position:relative}}
+  @media (min-width:768px){
+    .pk-bg{background:#0B0B0B;display:flex;align-items:center;justify-content:center}
+    .pk-bg img{object-fit:contain;object-position:center;opacity:.7;width:auto;height:100%;max-width:56%;flex-shrink:0}
+  }
+  /* flanking PK logos on desktop */
+  .pk-flank{display:none}
+  @media (min-width:900px){
+    .pk-flank{display:block;position:absolute;top:50%;z-index:2;width:clamp(80px,10vw,140px);opacity:.18;pointer-events:none;filter:invert(1)}
+    .pk-flank.left{left:clamp(8px,2vw,28px);transform:translateY(-50%)}
+    .pk-flank.right{right:clamp(8px,2vw,28px);transform:translateY(-50%) scaleX(-1)}
+  }
   .pk-hero .back,.pk-hero .m-eyebrow,.pk-hint{z-index:2}
   @keyframes dvdFade{0%{opacity:0}4%{opacity:1}46%{opacity:1}50%{opacity:0}100%{opacity:0}}
 
@@ -141,10 +151,10 @@
   .ura-vine.right path{transform-origin:50% 0%}
   .ura-vine.right{right:0;transform:scaleX(-1)}
   .ura-vine svg{width:100%;height:100%;display:block}
-  .ura-vine path{fill:none;stroke:var(--ash);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:vineGrow 3.6s cubic-bezier(.22,1,.36,1) forwards, vineSway 5.5s ease-in-out 3.4s infinite}
+  .ura-vine path{fill:none;stroke:var(--ash);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:vineGrow 8s cubic-bezier(.16,1,.3,1) forwards, vineSway 5.5s ease-in-out 7.8s infinite}
   .ura-vine.right path{stroke:var(--ash-dk)}
   @keyframes vineGrow{to{stroke-dashoffset:0}}
-  @keyframes vineSway{0%,100%{transform:rotate(-1.3deg)}50%{transform:rotate(1.3deg)}}
+  @keyframes vineSway{0%{transform:rotate(0deg)}50%{transform:rotate(1.3deg)}100%{transform:rotate(-1.3deg)}}
   @keyframes vineFade{to{opacity:0}}
   @media (prefers-reduced-motion:reduce){.ura-vine{animation:none}.ura-vine path{animation:none;stroke-dashoffset:0}}
   /* ===== TheLonnyWeb corner web + climbing spider ===== */
@@ -160,6 +170,21 @@
   @keyframes lwSilk{0%{transform:translateX(-50%) scaleY(1)}66%{transform:translateX(-50%) scaleY(.145)}80%{transform:translateX(-50%) scaleY(.145)}100%{transform:translateX(-50%) scaleY(1)}}
   @keyframes lwLegs{from{transform:rotate(-1.7deg) scaleY(.99)}to{transform:rotate(1.7deg) scaleY(1.01)}}
   @media (prefers-reduced-motion:reduce){.lw-threads line,.lw-threads path{animation:none;opacity:.55}.lw-silk{animation:none;transform:translateX(-50%) scaleY(.56)}.lw-spider{animation:none;transform:translate(-50%,96px)}.lw-legs{animation:none}}
+  /* ===== 00Hunnid keyboard hero ===== */
+  .hd-kb-wrap{position:relative;z-index:3;display:flex;flex-direction:column;align-items:center;padding:clamp(90px,14vh,160px) 20px clamp(30px,4vh,56px);background:transparent}
+  .hd-kb{width:min(96vw,580px);cursor:pointer;-webkit-tap-highlight-color:transparent}
+  .kb-base{fill:#111210;stroke:#2a2a28;stroke-width:1}
+  .key-body{fill:#1c1c1a;stroke:#333330;stroke-width:1;transition:fill .06s,transform .06s;transform-origin:50% 100%}
+  .key-shine{fill:rgba(255,255,255,.04)}
+  .key-label{font-family:"AppleGaramond",Georgia,serif;font-size:16px;font-weight:700;fill:#b0ad9f;text-anchor:middle;dominant-baseline:middle;user-select:none;pointer-events:none}
+  .key--space .key-body{fill:#181816}
+  /* pressed state */
+  .key--pressed .key-body{fill:#DE7A1C;stroke:#f09040;transform:scaleY(.88) translateY(3px)}
+  .key--pressed .key-label{fill:#fff}
+  .key--pressed .key-shine{fill:rgba(255,255,255,.18)}
+  .hd-hint{font-family:"Archivo",sans-serif;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--ash);margin-top:18px;opacity:.6}
+  @media (hover:none){.hd-hint{display:none}}
+  @media (prefers-reduced-motion:reduce){.key-body{transition:none}}
 
   footer{position:relative;z-index:1;padding:clamp(50px,8vh,90px) 0 44px;text-align:center}
   .foot-logo{width:150px;margin:0 auto 24px}
@@ -196,13 +221,125 @@
 </header>
 
 <main>
+  <div class="hd-kb-wrap" aria-hidden="true">
+    <svg class="hd-kb" viewBox="0 0 514 244" role="img" aria-label="Keyboard">
+      <defs>
+        <filter id="kb-shadow" x="-10%" y="-10%" width="120%" height="130%">
+          <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#000" flood-opacity=".55"/>
+        </filter>
+        <filter id="key-glow" x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur stdDeviation="3" result="b"/>
+          <feComposite in="SourceGraphic" in2="b" operator="over"/>
+        </filter>
+      </defs>
+      <g class="kb-board" filter="url(#kb-shadow)">
+        <rect class="kb-base" x="-12" y="-12" width="538" height="268" rx="14"/>
+<g class="key" id="k-Q" data-k="Q" transform="translate(0,0)"><rect class="key-body" width="46" height="44" rx="5"/><rect class="key-shine" x="3" y="3" width="40" height="10" rx="3"/><text class="key-label" x="23" y="24">Q</text></g>
+<g class="key" id="k-W" data-k="W" transform="translate(52,0)"><rect class="key-body" width="46" height="44" rx="5"/><rect class="key-shine" x="3" y="3" width="40" height="10" rx="3"/><text class="key-label" x="23" y="24">W</text></g>
+<g class="key" id="k-E" data-k="E" transform="translate(104,0)"><rect class="key-body" width="46" height="44" rx="5"/><rect class="key-shine" x="3" y="3" width="40" height="10" rx="3"/><text class="key-label" x="23" y="24">E</text></g>
+<g class="key" id="k-R" data-k="R" transform="translate(156,0)"><rect class="key-body" width="46" height="44" rx="5"/><rect class="key-shine" x="3" y="3" width="40" height="10" rx="3"/><text class="key-label" x="23" y="24">R</text></g>
+<g class="key" id="k-T" data-k="T" transform="translate(208,0)"><rect class="key-body" width="46" height="44" rx="5"/><rect class="key-shine" x="3" y="3" width="40" height="10" rx="3"/><text class="key-label" x="23" y="24">T</text></g>
+<g class="key" id="k-Y" data-k="Y" transform="translate(260,0)"><rect class="key-body" width="46" height="44" rx="5"/><rect class="key-shine" x="3" y="3" width="40" height="10" rx="3"/><text class="key-label" x="23" y="24">Y</text></g>
+<g class="key" id="k-U" data-k="U" transform="translate(312,0)"><rect class="key-body" width="46" height="44" rx="5"/><rect class="key-shine" x="3" y="3" width="40" height="10" rx="3"/><text class="key-label" x="23" y="24">U</text></g>
+<g class="key" id="k-I" data-k="I" transform="translate(364,0)"><rect class="key-body" width="46" height="44" rx="5"/><rect class="key-shine" x="3" y="3" width="40" height="10" rx="3"/><text class="key-label" x="23" y="24">I</text></g>
+<g class="key" id="k-O" data-k="O" transform="translate(416,0)"><rect class="key-body" width="46" height="44" rx="5"/><rect class="key-shine" x="3" y="3" width="40" height="10" rx="3"/><text class="key-label" x="23" y="24">O</text></g>
+<g class="key" id="k-P" data-k="P" transform="translate(468,0)"><rect class="key-body" width="46" height="44" rx="5"/><rect class="key-shine" x="3" y="3" width="40" height="10" rx="3"/><text class="key-label" x="23" y="24">P</text></g>
+<g class="key" id="k-A" data-k="A" transform="translate(23,50)"><rect class="key-body" width="46" height="44" rx="5"/><rect class="key-shine" x="3" y="3" width="40" height="10" rx="3"/><text class="key-label" x="23" y="24">A</text></g>
+<g class="key" id="k-S" data-k="S" transform="translate(75,50)"><rect class="key-body" width="46" height="44" rx="5"/><rect class="key-shine" x="3" y="3" width="40" height="10" rx="3"/><text class="key-label" x="23" y="24">S</text></g>
+<g class="key" id="k-D" data-k="D" transform="translate(127,50)"><rect class="key-body" width="46" height="44" rx="5"/><rect class="key-shine" x="3" y="3" width="40" height="10" rx="3"/><text class="key-label" x="23" y="24">D</text></g>
+<g class="key" id="k-F" data-k="F" transform="translate(179,50)"><rect class="key-body" width="46" height="44" rx="5"/><rect class="key-shine" x="3" y="3" width="40" height="10" rx="3"/><text class="key-label" x="23" y="24">F</text></g>
+<g class="key" id="k-G" data-k="G" transform="translate(231,50)"><rect class="key-body" width="46" height="44" rx="5"/><rect class="key-shine" x="3" y="3" width="40" height="10" rx="3"/><text class="key-label" x="23" y="24">G</text></g>
+<g class="key" id="k-H" data-k="H" transform="translate(283,50)"><rect class="key-body" width="46" height="44" rx="5"/><rect class="key-shine" x="3" y="3" width="40" height="10" rx="3"/><text class="key-label" x="23" y="24">H</text></g>
+<g class="key" id="k-J" data-k="J" transform="translate(335,50)"><rect class="key-body" width="46" height="44" rx="5"/><rect class="key-shine" x="3" y="3" width="40" height="10" rx="3"/><text class="key-label" x="23" y="24">J</text></g>
+<g class="key" id="k-K" data-k="K" transform="translate(387,50)"><rect class="key-body" width="46" height="44" rx="5"/><rect class="key-shine" x="3" y="3" width="40" height="10" rx="3"/><text class="key-label" x="23" y="24">K</text></g>
+<g class="key" id="k-L" data-k="L" transform="translate(439,50)"><rect class="key-body" width="46" height="44" rx="5"/><rect class="key-shine" x="3" y="3" width="40" height="10" rx="3"/><text class="key-label" x="23" y="24">L</text></g>
+<g class="key" id="k-Z" data-k="Z" transform="translate(46,100)"><rect class="key-body" width="46" height="44" rx="5"/><rect class="key-shine" x="3" y="3" width="40" height="10" rx="3"/><text class="key-label" x="23" y="24">Z</text></g>
+<g class="key" id="k-X" data-k="X" transform="translate(98,100)"><rect class="key-body" width="46" height="44" rx="5"/><rect class="key-shine" x="3" y="3" width="40" height="10" rx="3"/><text class="key-label" x="23" y="24">X</text></g>
+<g class="key" id="k-C" data-k="C" transform="translate(150,100)"><rect class="key-body" width="46" height="44" rx="5"/><rect class="key-shine" x="3" y="3" width="40" height="10" rx="3"/><text class="key-label" x="23" y="24">C</text></g>
+<g class="key" id="k-V" data-k="V" transform="translate(202,100)"><rect class="key-body" width="46" height="44" rx="5"/><rect class="key-shine" x="3" y="3" width="40" height="10" rx="3"/><text class="key-label" x="23" y="24">V</text></g>
+<g class="key" id="k-B" data-k="B" transform="translate(254,100)"><rect class="key-body" width="46" height="44" rx="5"/><rect class="key-shine" x="3" y="3" width="40" height="10" rx="3"/><text class="key-label" x="23" y="24">B</text></g>
+<g class="key" id="k-N" data-k="N" transform="translate(306,100)"><rect class="key-body" width="46" height="44" rx="5"/><rect class="key-shine" x="3" y="3" width="40" height="10" rx="3"/><text class="key-label" x="23" y="24">N</text></g>
+<g class="key" id="k-M" data-k="M" transform="translate(358,100)"><rect class="key-body" width="46" height="44" rx="5"/><rect class="key-shine" x="3" y="3" width="40" height="10" rx="3"/><text class="key-label" x="23" y="24">M</text></g>
+<g class="key key--space" id="k-SP" transform="translate(52,150)"><rect class="key-body" width="358" height="44" rx="5"/><rect class="key-shine" x="3" y="3" width="352" height="10" rx="3"/></g>
+      </g>
+    </svg>
+    <p class="hd-hint">hover to play &middot; click to perform</p>
+  </div>
   <section class="m-hero">
     <div class="wrap">
-      <a class="back" href="index.html">← <span>Creek Bay Records</span></a>
-      <div class="m-eyebrow">(04) · Engineer / Artist</div>
+      <a class="back" href="index.html">â <span>Creek Bay Records</span></a>
+      <div class="m-eyebrow">(04) Â· Engineer / Artist</div>
       <h1 class="m-name">00Hunnid</h1>
     </div>
   </section>
+  <script>
+  (function(){
+    var kb=document.querySelector('.hd-kb');
+    if(!kb||matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+
+    var ALL_KEYS=['Q','W','E','R','T','Y','U','I','O','P',
+                  'A','S','D','F','G','H','J','K','L',
+                  'Z','X','C','V','B','N','M','SP'];
+    // signature sequences for click animation
+    var SEQS=[
+      ['0','0','H','U','N','N','I','D'].filter(function(k){return document.getElementById('k-'+k);}),
+      ['Q','W','E','R','T','Y'],
+      ['A','S','D','F'],
+      ['Z','X','C','V','B','N','M'],
+    ];
+    // fallback: random 6 keys
+    SEQS[0]=SEQS[0].length?SEQS[0]:['H','U','N','N','I','D'];
+
+    var timers=[], pressing=new Set();
+
+    function pressKey(id,dur){
+      var el=document.getElementById(id); if(!el) return;
+      if(pressing.has(id)) return;
+      pressing.add(id);
+      el.classList.add('key--pressed');
+      var t=setTimeout(function(){
+        el.classList.remove('key--pressed');
+        pressing.delete(id);
+      }, dur||120);
+      timers.push(t);
+    }
+
+    function clearAll(){
+      timers.forEach(clearTimeout); timers=[];
+      pressing.forEach(function(id){
+        var el=document.getElementById(id);
+        if(el) el.classList.remove('key--pressed');
+      });
+      pressing.clear();
+    }
+
+    function randKeys(n){
+      var pool=ALL_KEYS.slice(); var out=[];
+      for(var i=0;i<n;i++){
+        var idx=Math.floor(Math.random()*pool.length);
+        out.push(pool.splice(idx,1)[0]); 
+      }
+      return out;
+    }
+
+    // hover: press 3-4 random keys, hold while hovering
+    kb.addEventListener('mouseenter',function(){
+      var keys=randKeys(3+Math.floor(Math.random()*2));
+      keys.forEach(function(k){ pressKey('k-'+k, 99999); });
+    });
+    kb.addEventListener('mouseleave',function(){ clearAll(); });
+
+    // click: play a sequence with delays
+    kb.addEventListener('click',function(){
+      clearAll();
+      var seq=SEQS[Math.floor(Math.random()*SEQS.length)];
+      seq.forEach(function(k,i){
+        var t=setTimeout(function(){ pressKey('k-'+k,160); }, i*140);
+        timers.push(t);
+      });
+    });
+  })();
+  </script>
 
   <!-- INTRO / BIO -->
   <section class="m-sec">

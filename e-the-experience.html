@@ -52,7 +52,17 @@
   .pk-hint{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--ash)}
   .pk-bg{position:absolute;inset:0;z-index:0;overflow:hidden;background:#0F0F0E}
   .pk-bg img{width:100%;height:100%;object-fit:cover;object-position:center 70%;opacity:.65}
-  @media (min-width:768px){.pk-bg{background:#0B0B0B}.pk-bg img{object-fit:contain;object-position:center center;opacity:.7;width:auto;height:100%;max-width:60%;margin:0 auto;display:block;left:50%;transform:translateX(-50%);position:relative}}
+  @media (min-width:768px){
+    .pk-bg{background:#0B0B0B;display:flex;align-items:center;justify-content:center}
+    .pk-bg img{object-fit:contain;object-position:center;opacity:.7;width:auto;height:100%;max-width:56%;flex-shrink:0}
+  }
+  /* flanking PK logos on desktop */
+  .pk-flank{display:none}
+  @media (min-width:900px){
+    .pk-flank{display:block;position:absolute;top:50%;z-index:2;width:clamp(80px,10vw,140px);opacity:.18;pointer-events:none;filter:invert(1)}
+    .pk-flank.left{left:clamp(8px,2vw,28px);transform:translateY(-50%)}
+    .pk-flank.right{right:clamp(8px,2vw,28px);transform:translateY(-50%) scaleX(-1)}
+  }
   .pk-hero .back,.pk-hero .m-eyebrow,.pk-hint{z-index:2}
   @keyframes dvdFade{0%{opacity:0}4%{opacity:1}46%{opacity:1}50%{opacity:0}100%{opacity:0}}
 
@@ -141,10 +151,10 @@
   .ura-vine.right path{transform-origin:50% 0%}
   .ura-vine.right{right:0;transform:scaleX(-1)}
   .ura-vine svg{width:100%;height:100%;display:block}
-  .ura-vine path{fill:none;stroke:var(--ash);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:vineGrow 3.6s cubic-bezier(.22,1,.36,1) forwards, vineSway 5.5s ease-in-out 3.4s infinite}
+  .ura-vine path{fill:none;stroke:var(--ash);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:vineGrow 8s cubic-bezier(.16,1,.3,1) forwards, vineSway 5.5s ease-in-out 7.8s infinite}
   .ura-vine.right path{stroke:var(--ash-dk)}
   @keyframes vineGrow{to{stroke-dashoffset:0}}
-  @keyframes vineSway{0%,100%{transform:rotate(-1.3deg)}50%{transform:rotate(1.3deg)}}
+  @keyframes vineSway{0%{transform:rotate(0deg)}50%{transform:rotate(1.3deg)}100%{transform:rotate(-1.3deg)}}
   @keyframes vineFade{to{opacity:0}}
   @media (prefers-reduced-motion:reduce){.ura-vine{animation:none}.ura-vine path{animation:none;stroke-dashoffset:0}}
   /* ===== TheLonnyWeb corner web + climbing spider ===== */
@@ -160,6 +170,21 @@
   @keyframes lwSilk{0%{transform:translateX(-50%) scaleY(1)}66%{transform:translateX(-50%) scaleY(.145)}80%{transform:translateX(-50%) scaleY(.145)}100%{transform:translateX(-50%) scaleY(1)}}
   @keyframes lwLegs{from{transform:rotate(-1.7deg) scaleY(.99)}to{transform:rotate(1.7deg) scaleY(1.01)}}
   @media (prefers-reduced-motion:reduce){.lw-threads line,.lw-threads path{animation:none;opacity:.55}.lw-silk{animation:none;transform:translateX(-50%) scaleY(.56)}.lw-spider{animation:none;transform:translate(-50%,96px)}.lw-legs{animation:none}}
+  /* ===== 00Hunnid keyboard hero ===== */
+  .hd-kb-wrap{position:relative;z-index:3;display:flex;flex-direction:column;align-items:center;padding:clamp(90px,14vh,160px) 20px clamp(30px,4vh,56px);background:transparent}
+  .hd-kb{width:min(96vw,580px);cursor:pointer;-webkit-tap-highlight-color:transparent}
+  .kb-base{fill:#111210;stroke:#2a2a28;stroke-width:1}
+  .key-body{fill:#1c1c1a;stroke:#333330;stroke-width:1;transition:fill .06s,transform .06s;transform-origin:50% 100%}
+  .key-shine{fill:rgba(255,255,255,.04)}
+  .key-label{font-family:"AppleGaramond",Georgia,serif;font-size:16px;font-weight:700;fill:#b0ad9f;text-anchor:middle;dominant-baseline:middle;user-select:none;pointer-events:none}
+  .key--space .key-body{fill:#181816}
+  /* pressed state */
+  .key--pressed .key-body{fill:#DE7A1C;stroke:#f09040;transform:scaleY(.88) translateY(3px)}
+  .key--pressed .key-label{fill:#fff}
+  .key--pressed .key-shine{fill:rgba(255,255,255,.18)}
+  .hd-hint{font-family:"Archivo",sans-serif;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--ash);margin-top:18px;opacity:.6}
+  @media (hover:none){.hd-hint{display:none}}
+  @media (prefers-reduced-motion:reduce){.key-body{transition:none}}
 
   footer{position:relative;z-index:1;padding:clamp(50px,8vh,90px) 0 44px;text-align:center}
   .foot-logo{width:150px;margin:0 auto 24px}
