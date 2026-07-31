@@ -525,10 +525,13 @@
     var ogreScreenX = 0; // will be set when ogre slides in
 
     function spawnBullet(){
-      // barrel position in viewport coords
-      var ogreLeft = parseInt(wrap.style.transform.match(/translate3d\(([^,]+)/)[1]);
-      var bx = ogreLeft + BARREL_X;
-      var bh = window.innerHeight - OGRE_H + BARREL_Y;
+      // barrel position in viewport coords.
+      // wrap is anchored with right:0, so its transform X is an offset
+      // from the RIGHT edge, not the left — convert to a true left-edge
+      // screen coordinate before adding the barrel offset.
+      var wrapLeft = window.innerWidth - OGRE_W + currentX;
+      var bx = wrapLeft + BARREL_X;
+      var bh = window.innerHeight - OGRE_H + recoilY + BARREL_Y;
       bullets.push({x:bx, y:bh, vx:-(28+Math.random()*8), len:18+Math.random()*10, alpha:1});
     }
 
