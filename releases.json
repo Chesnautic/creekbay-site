@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-29T15:21:40.379Z",
+  "updated": "2026-07-31T15:51:25.395Z",
   "releases": {
     "turboslidechamp": {
       "spotifyName": "turboslidechamp",
@@ -300,6 +300,14 @@
     "ura": {
       "spotifyName": "URA",
       "official": [
+        {
+          "id": "6tBae909kpji7ysv9NCGaX",
+          "title": "Rot",
+          "releaseDate": "2026-07-29",
+          "type": "single",
+          "cover": "https://i.scdn.co/image/ab67616d0000b2736d21e4e75a8154bfd6d75eac",
+          "url": "https://open.spotify.com/album/6tBae909kpji7ysv9NCGaX"
+        },
         {
           "id": "3kpbFf05PNFjNo0BYT3oD4",
           "title": "Solo",
