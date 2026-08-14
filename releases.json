@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-07T14:43:18.891Z",
+  "updated": "2026-08-14T14:43:01.209Z",
   "releases": {
     "turboslidechamp": {
       "spotifyName": "turboslidechamp",
@@ -288,12 +288,12 @@
       "official": [],
       "featured": [
         {
-          "id": "5y7xxuWBKm2yVoRENmMY90",
-          "title": "The513's Euphoric Rage Room",
-          "releaseDate": "2026-07-26",
+          "id": "6cMAzmQKk5FxHTbQa9XOnx",
+          "title": "TALES FROM THE CREEK",
+          "releaseDate": "2026-04-05",
           "type": "album",
-          "cover": "https://i.scdn.co/image/ab67616d0000b273dbeed9a0cacfbd5e85d2604d",
-          "url": "https://open.spotify.com/album/5y7xxuWBKm2yVoRENmMY90"
+          "cover": "https://i.scdn.co/image/ab67616d0000b2738b189ba62ac94f0c52bf024a",
+          "url": "https://open.spotify.com/album/6cMAzmQKk5FxHTbQa9XOnx"
         }
       ]
     },
@@ -322,6 +322,22 @@
     "creekbay": {
       "spotifyName": "Creek Bay Records",
       "official": [
+        {
+          "id": "5QWTXeej9ebqZg7CCZk9MX",
+          "title": "ELOHEEM",
+          "releaseDate": "2026-08-14",
+          "type": "single",
+          "cover": "https://i.scdn.co/image/ab67616d0000b273e62faec14802228f4e9e43d4",
+          "url": "https://open.spotify.com/album/5QWTXeej9ebqZg7CCZk9MX"
+        },
+        {
+          "id": "4i3FSv8owHd4n8wzjSWz6t",
+          "title": "REAL DEEP SARATOGA/WHAT IF?",
+          "releaseDate": "2026-08-12",
+          "type": "single",
+          "cover": "https://i.scdn.co/image/ab67616d0000b2739ebab3fb2ecf00fa7082b7e7",
+          "url": "https://open.spotify.com/album/4i3FSv8owHd4n8wzjSWz6t"
+        },
         {
           "id": "6cMAzmQKk5FxHTbQa9XOnx",
           "title": "TALES FROM THE CREEK",
