@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-14T14:43:01.209Z",
+  "updated": "2026-08-21T14:21:23.397Z",
   "releases": {
     "turboslidechamp": {
       "spotifyName": "turboslidechamp",
@@ -91,28 +91,28 @@
       "spotifyName": "pkcentraL",
       "official": [
         {
-          "id": "5A6sbyNJaPiy5HlXxoJulE",
-          "title": "Desperate (REMIX)",
+          "id": "0Ovuct1wstF4HNK0zXZGZ6",
+          "title": "Desperate [REMIX]",
           "releaseDate": "2026-05-22",
           "type": "single",
-          "cover": "https://i.scdn.co/image/ab67616d0000b2734acf0f1733726e0a06422056",
-          "url": "https://open.spotify.com/album/5A6sbyNJaPiy5HlXxoJulE"
+          "cover": "https://i.scdn.co/image/ab67616d0000b273eb94859dc3f1c67a4763e076",
+          "url": "https://open.spotify.com/album/0Ovuct1wstF4HNK0zXZGZ6"
         },
         {
-          "id": "0DF9FTGEGFg8PwGu9j6Ibt",
+          "id": "53QKERE3js1zgA8mZZCwkA",
           "title": "Reminiscent",
           "releaseDate": "2026-05-01",
           "type": "single",
-          "cover": "https://i.scdn.co/image/ab67616d0000b273341810ba33fea02bc951d209",
-          "url": "https://open.spotify.com/album/0DF9FTGEGFg8PwGu9j6Ibt"
+          "cover": "https://i.scdn.co/image/ab67616d0000b2731ece20487711e323843035ff",
+          "url": "https://open.spotify.com/album/53QKERE3js1zgA8mZZCwkA"
         },
         {
-          "id": "5gxgADLmKnI5nO1S3Nxl5f",
+          "id": "7cbBSwnGOcR2uiUMfGyf7Y",
           "title": "Desperate",
           "releaseDate": "2026-04-24",
           "type": "single",
-          "cover": "https://i.scdn.co/image/ab67616d0000b273e116f346c8121417680ebf3e",
-          "url": "https://open.spotify.com/album/5gxgADLmKnI5nO1S3Nxl5f"
+          "cover": "https://i.scdn.co/image/ab67616d0000b273bd0624a7f9e08e3f812727f8",
+          "url": "https://open.spotify.com/album/7cbBSwnGOcR2uiUMfGyf7Y"
         },
         {
           "id": "2j8uFjEJpy4t0TTmLFQEF6",
@@ -121,14 +121,6 @@
           "type": "single",
           "cover": "https://i.scdn.co/image/ab67616d0000b273f8501a09780e15843a38f8ff",
           "url": "https://open.spotify.com/album/2j8uFjEJpy4t0TTmLFQEF6"
-        },
-        {
-          "id": "17Be6AaoTgGi7cSZ4tSVD0",
-          "title": "Court Side View",
-          "releaseDate": "2026-02-27",
-          "type": "single",
-          "cover": "https://i.scdn.co/image/ab67616d0000b273f606ea282a27ed734489a07c",
-          "url": "https://open.spotify.com/album/17Be6AaoTgGi7cSZ4tSVD0"
         }
       ],
       "featured": []
@@ -322,6 +314,14 @@
     "creekbay": {
       "spotifyName": "Creek Bay Records",
       "official": [
+        {
+          "id": "1cL3jPkBRKXibetjldkYAp",
+          "title": "G.O.S.",
+          "releaseDate": "2026-08-21",
+          "type": "single",
+          "cover": "https://i.scdn.co/image/ab67616d0000b273ae1a12e82e34932231cd0aa1",
+          "url": "https://open.spotify.com/album/1cL3jPkBRKXibetjldkYAp"
+        },
         {
           "id": "5QWTXeej9ebqZg7CCZk9MX",
           "title": "ELOHEEM",
