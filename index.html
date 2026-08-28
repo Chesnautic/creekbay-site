@@ -421,7 +421,7 @@
     var el = document.getElementById('bflySprite');
     if(!el) return;
     var cols = 12, rows = 12, frames = 143;
-    var duration = 18000; /* ms, matches flyAcross animation duration */
+    var duration = 4767; /* ms — matches the source video's real playback speed (143 frames @ 30fps); loops repeatedly during the longer flyAcross flight */
     var start = null;
     function tick(now){
       if(start === null) start = now;
