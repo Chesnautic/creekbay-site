@@ -1,9 +1,17 @@
 {
-  "updated": "2026-08-21T14:21:23.397Z",
+  "updated": "2026-08-28T23:14:12.338Z",
   "releases": {
     "turboslidechamp": {
       "spotifyName": "turboslidechamp",
       "official": [
+        {
+          "id": "1NYbDM1m4Tv2RakfBYPqhh",
+          "title": "Butterflies with joints, Ogres with guns",
+          "releaseDate": "2026-08-28",
+          "type": "album",
+          "cover": "https://i.scdn.co/image/ab67616d0000b2739501396fa6f80d712f3e49ab",
+          "url": "https://open.spotify.com/album/1NYbDM1m4Tv2RakfBYPqhh"
+        },
         {
           "id": "0Iv1tUx4dvx1B9iLJYVfGa",
           "title": "CHARLOTTE'S WEB",
@@ -121,6 +129,14 @@
           "type": "single",
           "cover": "https://i.scdn.co/image/ab67616d0000b273f8501a09780e15843a38f8ff",
           "url": "https://open.spotify.com/album/2j8uFjEJpy4t0TTmLFQEF6"
+        },
+        {
+          "id": "1lnJOe1t5lEeevxIf7ky4C",
+          "title": "Court Side View",
+          "releaseDate": "2026-02-27",
+          "type": "single",
+          "cover": "https://i.scdn.co/image/ab67616d0000b273bd4797a093d0e39926542472",
+          "url": "https://open.spotify.com/album/1lnJOe1t5lEeevxIf7ky4C"
         }
       ],
       "featured": []
@@ -292,6 +308,14 @@
     "ura": {
       "spotifyName": "URA",
       "official": [
+        {
+          "id": "2E9L8ukONYON4AYRzNtRJh",
+          "title": "Wind",
+          "releaseDate": "2026-08-26",
+          "type": "single",
+          "cover": "https://i.scdn.co/image/ab67616d0000b273d692626fa33c3e3afe21ebaf",
+          "url": "https://open.spotify.com/album/2E9L8ukONYON4AYRzNtRJh"
+        },
         {
           "id": "6tBae909kpji7ysv9NCGaX",
           "title": "Rot",
