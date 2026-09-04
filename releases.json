@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-28T23:14:12.338Z",
+  "updated": "2026-09-04T17:11:37.240Z",
   "releases": {
     "turboslidechamp": {
       "spotifyName": "turboslidechamp",
@@ -296,6 +296,14 @@
       "official": [],
       "featured": [
         {
+          "id": "1NYbDM1m4Tv2RakfBYPqhh",
+          "title": "Butterflies with joints, Ogres with guns",
+          "releaseDate": "2026-08-28",
+          "type": "album",
+          "cover": "https://i.scdn.co/image/ab67616d0000b2739501396fa6f80d712f3e49ab",
+          "url": "https://open.spotify.com/album/1NYbDM1m4Tv2RakfBYPqhh"
+        },
+        {
           "id": "6cMAzmQKk5FxHTbQa9XOnx",
           "title": "TALES FROM THE CREEK",
           "releaseDate": "2026-04-05",
@@ -308,6 +316,14 @@
     "ura": {
       "spotifyName": "URA",
       "official": [
+        {
+          "id": "2MerstQcNojYYOqqW0G4BO",
+          "title": "THORNS",
+          "releaseDate": "2026-08-31",
+          "type": "album",
+          "cover": "https://i.scdn.co/image/ab67616d0000b273dac41e26226d90fa0b797d4b",
+          "url": "https://open.spotify.com/album/2MerstQcNojYYOqqW0G4BO"
+        },
         {
           "id": "2E9L8ukONYON4AYRzNtRJh",
           "title": "Wind",
