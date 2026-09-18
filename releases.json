@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-11T17:21:37.701Z",
+  "updated": "2026-09-18T17:18:41.988Z",
   "releases": {
     "turboslidechamp": {
       "spotifyName": "turboslidechamp",
@@ -144,6 +144,14 @@
     "e-the-experience": {
       "spotifyName": "E The Experience",
       "official": [
+        {
+          "id": "5yvlpGGf42UVfq3wsPDiuY",
+          "title": "Winners",
+          "releaseDate": "2026-09-18",
+          "type": "single",
+          "cover": "https://i.scdn.co/image/ab67616d0000b27377594945b9789e83c7dcab2e",
+          "url": "https://open.spotify.com/album/5yvlpGGf42UVfq3wsPDiuY"
+        },
         {
           "id": "2TghdNCzYThfDoZVWIjizq",
           "title": "Roses On My Rosary",
@@ -296,12 +304,12 @@
       "official": [],
       "featured": [
         {
-          "id": "1NYbDM1m4Tv2RakfBYPqhh",
-          "title": "Butterflies with joints, Ogres with guns",
-          "releaseDate": "2026-08-28",
-          "type": "album",
-          "cover": "https://i.scdn.co/image/ab67616d0000b2739501396fa6f80d712f3e49ab",
-          "url": "https://open.spotify.com/album/1NYbDM1m4Tv2RakfBYPqhh"
+          "id": "4i3FSv8owHd4n8wzjSWz6t",
+          "title": "REAL DEEP SARATOGA/WHAT IF?",
+          "releaseDate": "2026-08-12",
+          "type": "single",
+          "cover": "https://i.scdn.co/image/ab67616d0000b2739ebab3fb2ecf00fa7082b7e7",
+          "url": "https://open.spotify.com/album/4i3FSv8owHd4n8wzjSWz6t"
         },
         {
           "id": "6cMAzmQKk5FxHTbQa9XOnx",
