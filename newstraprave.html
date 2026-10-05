@@ -39,7 +39,7 @@
   .nav-links{display:flex;gap:30px;align-items:center}
   .nav-links a{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--paper);opacity:.72;transition:opacity .2s}
   .nav-links a:hover{opacity:1}.nav-links a.active{opacity:1;color:var(--accent)}
-  .burger{display:none;background:none;border:0;cursor:pointer;flex-direction:column;gap:5px;padding:6px}
+  .burger{display:none;background:none;border:0;cursor:pointer;flex-direction:column;gap:5px;padding:14px 10px;touch-action:manipulation}
   .burger span{width:24px;height:2px;background:var(--paper);display:block}
 
   /* ---------- HERO ---------- */
@@ -158,7 +158,7 @@
   .sec{padding:clamp(80px,13vh,150px) 0;position:relative}
   .sec--light{background:var(--sec-orange);color:var(--ink);--ash-dk:#4A2708}
   .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:clamp(40px,7vw,80px)}
-  .sec-head h2{font-family:"AppleGaramond",Georgia,serif;font-weight:900;font-size:clamp(38px,8vw,88px);line-height:.9;letter-spacing:-.01em}
+  .sec-head h2{font-family:"AppleGaramond",Georgia,serif;font-weight:900;font-size:clamp(38px,8vw,88px);line-height:.9;letter-spacing:-.01em;text-wrap:balance}
   .sec-head .idx{font-size:12px;letter-spacing:.3em;color:var(--accent)}
   .sec--light .sec-head .idx{color:var(--ash-dk)}
 
@@ -179,13 +179,13 @@
   /* ---------- NEWS ---------- */
   .news-lead{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(30px,6vw,80px);align-items:end;margin-bottom:70px}
   .news-lead .tag{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--ash-dk)}
-  .news-lead h3{font-family:"AppleGaramond",Georgia,serif;font-weight:900;font-size:clamp(30px,5vw,60px);line-height:.98;margin-top:16px;letter-spacing:-.01em}
+  .news-lead h3{font-family:"AppleGaramond",Georgia,serif;font-weight:900;font-size:clamp(30px,5vw,60px);line-height:.98;margin-top:16px;letter-spacing:-.01em;text-wrap:balance}
   .news-lead p{color:var(--ink);font-size:17px;max-width:46ch}
   .news-list{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-l);border:1px solid var(--line-l)}
   .news-item{background:var(--paper);padding:34px 30px;min-height:230px;display:flex;flex-direction:column;transition:.3s}
   .news-item:hover{background:var(--paper-pure)}
   .news-item .date{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ash-dk)}
-  .news-item h4{font-family:"AppleGaramond",Georgia,serif;font-weight:600;font-size:26px;line-height:1.05;margin-top:14px;flex:1}
+  .news-item h4{font-family:"AppleGaramond",Georgia,serif;font-weight:600;font-size:clamp(20px,2.6vw,26px);line-height:1.05;margin-top:14px;flex:1}
   .news-item .more{font-size:12px;letter-spacing:.16em;text-transform:uppercase;margin-top:20px}
 
   /* ---------- ROSTER (links to pages) ---------- */
@@ -352,7 +352,7 @@
         <p style="color:var(--ash);font-size:14px;max-width:320px">First to know about drops, shows, and everything out of the room.</p>
         <form class="news-signup" id="nl-form" method="post" target="nl-frame"
           action="https://buttondown.com/api/emails/embed-subscribe/creekbayrecords">
-          <input id="nl-email" type="email" name="email" placeholder="Your email" aria-label="Email" required />
+          <input id="nl-email" type="email" name="email" placeholder="Your email" aria-label="Email" autocomplete="email" required />
           <input type="hidden" name="embed" value="1" />
           <button type="submit">Join</button>
         </form>

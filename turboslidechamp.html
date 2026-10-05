@@ -29,7 +29,7 @@
   .nav-links{display:flex;gap:30px;align-items:center}
   .nav-links a{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--paper);opacity:.72;transition:opacity .2s}
   .nav-links a:hover{opacity:1}
-  .burger{display:none;background:none;border:0;cursor:pointer;flex-direction:column;gap:5px;padding:6px}
+  .burger{display:none;background:none;border:0;cursor:pointer;flex-direction:column;gap:5px;padding:14px 10px;touch-action:manipulation}
   .burger span{width:24px;height:2px;background:var(--paper);display:block}
 
   /* face / background piece (turbo) */
@@ -41,7 +41,7 @@
   .back{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ash);transition:.2s;display:inline-flex;gap:8px}
   .back:hover{color:var(--paper)}
   .m-eyebrow{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin:28px 0 16px}
-  .m-name{font-family:"AppleGaramond",Georgia,serif;font-weight:900;text-transform:uppercase;font-size:clamp(52px,13vw,176px);line-height:.84;letter-spacing:-.02em}
+  .m-name{font-family:"AppleGaramond",Georgia,serif;font-weight:900;text-transform:uppercase;font-size:clamp(52px,13vw,176px);line-height:.84;letter-spacing:-.02em;overflow-wrap:break-word;word-break:break-word;hyphens:auto}
 
   /* DVD bounce hero (pk) */
   .pk-hero{position:relative;height:100svh;overflow:hidden;border-bottom:1px solid var(--line-d);padding:0}
@@ -247,7 +247,7 @@
     <div class="wrap">
       <a class="back" href="index.html">← <span>Creek Bay Records</span></a>
       <div class="m-eyebrow">(01) · Artist</div>
-      <h1 class="m-name">TurboSlideChamp</h1>
+      <h1 class="m-name">Turbo<wbr>Slide<wbr>Champ</h1>
     </div>
   </section>
 
