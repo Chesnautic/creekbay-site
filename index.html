@@ -109,17 +109,12 @@
   .spider-svg{width:100%;height:100%;display:block;overflow:visible;filter:drop-shadow(0 2px 5px rgba(0,0,0,.55))}
   .spider-wrap.is-playing .spider-figure{animation:spiderSwingPlay 1.05s ease-in-out infinite alternate}
   .spider-wrap.is-playing .spider-svg{filter:drop-shadow(0 2px 5px rgba(0,0,0,.55)) drop-shadow(0 0 7px rgba(222,122,28,.45))}
-  .spider-ring{position:absolute;left:50%;top:46%;width:36px;height:36px;margin:-18px 0 0 -18px;border-radius:50%;border:1px solid var(--accent);opacity:0;pointer-events:none}
-  .spider-wrap.is-playing .spider-ring{animation:spiderRing 1.6s ease-out infinite}
-  .spider-wrap.is-playing .spider-ring.r2{animation-delay:.55s}
-  .spider-wrap:not(.is-playing) .spider-ring{display:none}
   .spider-caption{font-family:"Archivo",sans-serif;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ash);text-align:center;max-width:120px;line-height:1.4;margin-top:2px}
   .spider-wrap.is-playing .spider-caption{color:var(--accent)}
   @keyframes spiderSwing{0%{transform:rotate(-4deg)}100%{transform:rotate(4deg)}}
   @keyframes spiderSwingPlay{0%{transform:rotate(-8deg)}100%{transform:rotate(8deg)}}
-  @keyframes spiderRing{0%{transform:scale(.4);opacity:.6}100%{transform:scale(2.1);opacity:0}}
   @media(max-width:760px){.spider-wrap{right:9%}.spider-figure{width:64px;height:60px}.spider-caption{font-size:9.5px;max-width:96px}}
-  @media (prefers-reduced-motion: reduce){.spider-figure{animation:none}.spider-wrap.is-playing .spider-figure{animation:none}.spider-wrap.is-playing .spider-ring{animation:none;display:none}}
+  @media (prefers-reduced-motion: reduce){.spider-figure{animation:none}.spider-wrap.is-playing .spider-figure{animation:none}}
   @keyframes flyAcrossPoison{
     0%{transform:translate(-14vw,50vh) rotate(-4deg)}
     20%{transform:translate(18vw,34vh) rotate(3deg)}
@@ -518,8 +513,6 @@
     <span class="spider-thread" aria-hidden="true"></span>
     <button type="button" class="spider-btn" id="spiderPlay" aria-pressed="false" aria-label="Play a 47-second snippet of Dreaming by Lonny Webs">
       <span class="spider-figure">
-        <span class="spider-ring"></span>
-        <span class="spider-ring r2"></span>
         <svg class="spider-svg" viewBox="0 0 140 128" aria-hidden="true">
         <defs>
           <radialGradient id="spiderBodyGrad" cx="40%" cy="30%" r="75%">
