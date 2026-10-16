@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-09T19:05:04.236Z",
+  "updated": "2026-10-16T17:42:49.231Z",
   "releases": {
     "turboslidechamp": {
       "spotifyName": "turboslidechamp",
@@ -90,6 +90,14 @@
     "pkcentral": {
       "spotifyName": "pkcentraL",
       "official": [
+        {
+          "id": "1Mr0SC0y1UDSm1AwNgpnjn",
+          "title": "Intimacy",
+          "releaseDate": "2026-10-16",
+          "type": "single",
+          "cover": "https://i.scdn.co/image/ab67616d0000b273a7aa09c9700a2d0e8d8aca31",
+          "url": "https://open.spotify.com/album/1Mr0SC0y1UDSm1AwNgpnjn"
+        },
         {
           "id": "0Ovuct1wstF4HNK0zXZGZ6",
           "title": "Desperate [REMIX]",
