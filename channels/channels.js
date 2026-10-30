@@ -23,7 +23,7 @@
     var wm = document.querySelector(".hero .wordmark");
     try {
       window.OK.mountKinetic(kin, {
-        word: "Creek Bay Records", shape: "torusKnot", color: "#F4F1E9", fill: "#0B0B0B",
+        word: "Creek Bay Records", shape: "torusKnot", color: "#FFFFFF", fill: "#3E3E3E",
         font: { fontFamily: "AppleGaramond, Georgia, serif", fontSize: 64, fontWeight: 700 },
         density: 12, speed: reduced ? 0 : 8, sizePercent: 96, hoverBoost: 7
       });
