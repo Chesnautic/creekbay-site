@@ -128,11 +128,5 @@
 
     var toast = document.getElementById("chToast");
     function say(t) { toast.textContent = t; toast.classList.add("show"); clearTimeout(say.t); say.t = setTimeout(function () { toast.classList.remove("show"); }, 2600); }
-    pass.addEventListener("click", function () {
-      var url = st.pass;
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(url).then(function () { say("Link copied — pass it on"); }, function () { location.href = url; });
-      } else location.href = url;
-    });
   }).catch(function () {});
 })();
