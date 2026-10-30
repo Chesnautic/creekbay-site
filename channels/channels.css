@@ -65,3 +65,7 @@ button.ch-cap:active{transform:translateY(2px);box-shadow:inset 0 1px 0 rgba(255
 .ch-home{padding-top:calc(var(--bar) + 28px)}
 .ch-head .m-label{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--ash)}
 .ch-home + .hero{min-height:78svh;padding-top:40px}
+
+.hero-kinetic{transition:opacity .38s ease,filter .38s ease}
+.hero-kinetic.kin-swap{opacity:0;filter:blur(6px)}
+.hero-cb-logo{position:absolute;left:50%;bottom:clamp(18px,4vh,40px);transform:translateX(-50%);width:clamp(56px,7vw,84px);z-index:3;opacity:.9;pointer-events:none}

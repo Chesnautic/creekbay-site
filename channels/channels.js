@@ -22,12 +22,26 @@
   if (kin && window.OK) {
     var wm = document.querySelector(".hero .wordmark");
     try {
-      window.OK.mountKinetic(kin, {
+      var kProps = {
         word: "Creek Bay Records", shape: "torusKnot", color: "#FFFFFF", fill: "#3E3E3E",
         font: { fontFamily: "AppleGaramond, Georgia, serif", fontSize: 64, fontWeight: 700 },
-        density: 12, speed: reduced ? 0 : 8, sizePercent: 96, hoverBoost: 7
-      });
+        density: 12, speed: reduced ? 0 : 8, sizePercent: 96, hoverBoost: 7, distort: 8
+      };
+      var kin3d = window.OK.mountKinetic(kin, kProps);
       if (wm) wm.classList.add("kinetic-on");
+      /* switch between the component's two forms: the knot and the twisted bar */
+      if (!reduced && kin3d && kin3d.update) {
+        var forms = [{ shape: "torusKnot", sizePercent: 96 }, { shape: "box", sizePercent: 118 }], fi = 0;
+        setInterval(function () {
+          if (document.hidden) return;
+          kin.classList.add("kin-swap");
+          setTimeout(function () {
+            fi = (fi + 1) % forms.length;
+            kin3d.update(Object.assign({}, kProps, forms[fi]));
+            setTimeout(function () { kin.classList.remove("kin-swap"); }, 80);
+          }, 380);
+        }, 9000);
+      }
     } catch (e) { kin.remove(); }
   }
 
