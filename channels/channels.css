@@ -38,7 +38,7 @@ button.ch-cap:active{transform:translateY(2px);box-shadow:inset 0 1px 0 rgba(255
 .ch-count{margin-top:30px;text-align:center}
 .ch-count .k{font-size:11px;letter-spacing:.28em;color:var(--ash);text-transform:uppercase}
 .ch-count .n{font-family:"AppleGaramond",Georgia,serif;font-weight:900;font-size:clamp(44px,9vw,96px);color:var(--pk);text-shadow:0 0 22px rgba(253,116,7,.55);line-height:1.05;text-transform:uppercase}
-.ch-pass{margin-top:20px;font-family:"Archivo",sans-serif;font-weight:600;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink);background:var(--pk);border:0;padding:16px 30px;border-radius:999px;cursor:pointer;box-shadow:0 0 26px rgba(253,116,7,.45)}
+.ch-pass{display:inline-block;text-decoration:none;margin-top:20px;font-family:"Archivo",sans-serif;font-weight:600;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink);background:var(--pk);border:0;padding:16px 30px;border-radius:999px;cursor:pointer;box-shadow:0 0 26px rgba(253,116,7,.45)}
 .ch-toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(40px);opacity:0;background:var(--ink);border:1px solid var(--line-d);color:var(--paper);padding:10px 16px;border-radius:10px;font-size:13px;transition:.25s;z-index:200;pointer-events:none}
 .ch-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
