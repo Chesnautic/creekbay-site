@@ -109,7 +109,7 @@
         if (!es[0].isIntersecting) return; kio.disconnect();
         try {
           window.OK.mountKeyboard(kbd, {
-            finish: "plastic", caseColor: "#4A4B4D", keyColor: "#3B3C3E", modColor: "#FD7407", pressColor: "#ffa04d",
+            finish: "metal", caseColor: "#8A8C91", keyColor: "#55575C", modColor: "#FD7407", pressColor: "#ffb36b",
             legendColor: "#FFFFFF", modLegendColor: "#FFFFFF", tilt: 17, size: 92, stiffness: 20, gap: 5, shadows: true,
             sound: true, soundOptions: { pitch: 10, volume: 8 }, followPointer: true, strength: 9
           });
@@ -123,6 +123,7 @@
       if (e.pointerType !== "mouse") return;
       var r = root.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
       tv.style.transform = "rotateY(" + x * 8 + "deg) rotateX(" + -y * 5 + "deg)";
+      root.querySelector(".ch-case").style.setProperty("--sx", (50 + x * 90).toFixed(1) + "%");
     });
 
     var toast = document.getElementById("chToast");
