@@ -1,0 +1,42 @@
+{
+  "_how": "One entry per day. The TV shows the newest clip whose date has arrived; on and after 'drop' it shows OUT NOW. Add ?preview=YYYY-MM-DD to any page to see another day.",
+  "drop": "2026-11-06",
+  "passUrl": "https://creekbayrecords.com/pass",
+  "clips": [
+    {
+      "date": "2026-10-30",
+      "src": "channels/clips/2026-10-30.mp4",
+      "poster": "channels/clips/2026-10-30.jpg"
+    },
+    {
+      "date": "2026-10-31",
+      "src": "channels/clips/2026-10-31.mp4",
+      "poster": "channels/clips/2026-10-31.jpg"
+    },
+    {
+      "date": "2026-11-01",
+      "src": "channels/clips/2026-11-01.mp4",
+      "poster": "channels/clips/2026-11-01.jpg"
+    },
+    {
+      "date": "2026-11-02",
+      "src": "channels/clips/2026-11-02.mp4",
+      "poster": "channels/clips/2026-11-02.jpg"
+    },
+    {
+      "date": "2026-11-03",
+      "src": "channels/clips/2026-11-03.mp4",
+      "poster": "channels/clips/2026-11-03.jpg"
+    },
+    {
+      "date": "2026-11-04",
+      "src": "channels/clips/2026-11-04.mp4",
+      "poster": "channels/clips/2026-11-04.jpg"
+    },
+    {
+      "date": "2026-11-05",
+      "src": "channels/clips/2026-11-05.mp4",
+      "poster": "channels/clips/2026-11-05.jpg"
+    }
+  ]
+}
