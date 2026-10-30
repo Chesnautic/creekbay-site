@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-23T17:58:54.742Z",
+  "updated": "2026-10-30T18:54:20.668Z",
   "releases": {
     "turboslidechamp": {
       "spotifyName": "turboslidechamp",
@@ -144,6 +144,14 @@
     "e-the-experience": {
       "spotifyName": "E The Experience",
       "official": [
+        {
+          "id": "51aBQsdWsvwgj2HuujH6Ma",
+          "title": "emotional unintelligence",
+          "releaseDate": "2026-10-30",
+          "type": "album",
+          "cover": "https://i.scdn.co/image/ab67616d0000b273361dde8ad65462df28139c72",
+          "url": "https://open.spotify.com/album/51aBQsdWsvwgj2HuujH6Ma"
+        },
         {
           "id": "5yvlpGGf42UVfq3wsPDiuY",
           "title": "Winners",
@@ -310,14 +318,6 @@
           "type": "single",
           "cover": "https://i.scdn.co/image/ab67616d0000b273b8ca0170fa1559415d216d29",
           "url": "https://open.spotify.com/album/7gmvWJg8SMP8y5Qh4iojaw"
-        },
-        {
-          "id": "1NYbDM1m4Tv2RakfBYPqhh",
-          "title": "Butterflies with joints, Ogres with guns",
-          "releaseDate": "2026-08-28",
-          "type": "album",
-          "cover": "https://i.scdn.co/image/ab67616d0000b2739501396fa6f80d712f3e49ab",
-          "url": "https://open.spotify.com/album/1NYbDM1m4Tv2RakfBYPqhh"
         },
         {
           "id": "4i3FSv8owHd4n8wzjSWz6t",
