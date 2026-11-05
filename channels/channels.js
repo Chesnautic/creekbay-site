@@ -45,6 +45,37 @@
     } catch (e) { kin.remove(); }
   }
 
+
+  /* drop day: pk logo bouncing around the TV like a DVD screensaver, staying out of the photo boxes.
+     It moves inside the biggest open rectangle (right of the girl, above the title and car). */
+  function bounceLogo(screen, avoid) {
+    var img = document.createElement("img");
+    img.src = "channels/pk_logo.png"; img.alt = ""; img.className = "ch-bounce";
+    var glass = screen.querySelector(".ch-glass"); screen.insertBefore(img, glass);
+    var x0 = 0, y0 = 0, x1 = 1, y1 = 1;
+    avoid.forEach(function (r) {                      // shrink the box away from each avoided area
+      if (r[0] <= 0.05 && r[2] < 0.5) x0 = Math.max(x0, r[2]);
+      else if (r[1] <= 0.05 && r[3] < 0.5) y0 = Math.max(y0, r[3]);
+      else if (r[3] >= 0.95 || r[2] >= 0.95) y1 = Math.min(y1, r[1]);
+    });
+    var pad = 0.025, px = 0.4, py = 0.3, vx = 0.14, vy = 0.10, lastT = 0;
+    function frame(t) {
+      var dt = lastT ? Math.min(0.05, (t - lastT) / 1000) : 0; lastT = t;
+      var W = screen.clientWidth, H = screen.clientHeight, w = img.offsetWidth / W, h = img.offsetHeight / H;
+      if (W && w) {
+        var lo = x0 + pad, hi = x1 - pad - w, top = y0 + pad, bot = y1 - pad - h;
+        if (!reduced) { px += vx * dt; py += vy * dt; }
+        var hit = false;
+        if (px < lo) { px = lo; vx = Math.abs(vx); hit = true; } else if (px > hi) { px = hi; vx = -Math.abs(vx); hit = true; }
+        if (py < top) { py = top; vy = Math.abs(vy); hit = true; } else if (py > bot) { py = bot; vy = -Math.abs(vy); hit = true; }
+        if (hit) { img.classList.remove("hit"); void img.offsetWidth; img.classList.add("hit"); }
+        img.style.transform = "translate(" + (px * W).toFixed(1) + "px," + (py * H).toFixed(1) + "px)";
+      }
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+
   var needsSchedule = document.getElementById("pkChannels") || document.getElementById("pkMiniTv");
   if (!needsSchedule) return;
 
@@ -83,8 +114,19 @@
     osdTR.textContent = label;
     count.textContent = st.out ? "Out now" : st.left + (st.left === 1 ? " day" : " days");
     if (st.out) {
-      vid.remove(); out.style.display = "grid"; osdBL.textContent = "★ OUT NOW"; osdBR.textContent = "";
-      soundBtn.style.display = "none"; pass.textContent = "Listen now";
+      osdBL.textContent = "★ OUT NOW"; osdBR.textContent = "";
+      soundBtn.style.display = "none"; pass.textContent = "Out now"; pass.href = sch.passUrl || pass.href;
+      root.classList.add("is-out");
+      var kb = document.getElementById("chKeys"), hint = root.querySelector(".ch-hint"), n = root.querySelector(".ch-count .n");
+      if (kb) kb.remove(); if (hint) hint.remove(); if (n) n.style.display = "none";
+      if (sch.out && sch.out.src) {
+        screen.classList.add("ch-drop");
+        vid.poster = sch.out.poster || ""; vid.src = sch.out.src; vid.loop = true;
+        new IntersectionObserver(function (es) {
+          es.forEach(function (e) { if (e.isIntersecting) vid.play().catch(function () {}); else vid.pause(); });
+        }).observe(screen);
+        bounceLogo(screen, sch.out.avoid || []);
+      } else { vid.remove(); out.style.display = "grid"; }
     } else if (st.clip) {
       vid.poster = st.clip.poster || ""; vid.src = st.clip.src; vid.loop = true;
       var vio = new IntersectionObserver(function (es) {

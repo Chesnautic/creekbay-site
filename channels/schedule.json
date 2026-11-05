@@ -38,5 +38,30 @@
       "src": "channels/clips/2026-11-05.mp4",
       "poster": "channels/clips/2026-11-05.jpg"
     }
-  ]
+  ],
+  "out": {
+    "src": "channels/clips/out.mp4",
+    "poster": "channels/clips/out.jpg",
+    "_avoid": "areas the bouncing logo stays out of, as fractions of the screen [x0,y0,x1,y1]",
+    "avoid": [
+      [
+        0.0236,
+        0.0313,
+        0.2924,
+        0.6333
+      ],
+      [
+        0.0,
+        0.7292,
+        1.0,
+        1.0
+      ],
+      [
+        0.6042,
+        0.6688,
+        1.0,
+        0.7292
+      ]
+    ]
+  }
 }
