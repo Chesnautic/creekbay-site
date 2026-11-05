@@ -76,3 +76,5 @@ button.ch-cap:active{transform:translateY(2px);box-shadow:inset 0 1px 0 rgba(255
 .ch-bounce.hit{animation:chBounceHit .35s ease-out}
 @keyframes chBounceHit{0%{filter:drop-shadow(0 0 22px rgba(253,116,7,1)) brightness(1.35)}100%{filter:drop-shadow(0 0 10px rgba(253,116,7,.55)) drop-shadow(0 2px 3px rgba(0,0,0,.35))}}
 #pkChannels.is-out .ch-count{margin-top:28px}
+.ch-screen.ch-drop{border-radius:14px 14px 0 0}
+.ch-outnow{margin:0 auto 18px;text-align:center;font-family:"AppleGaramond",Georgia,serif;font-weight:900;font-size:clamp(64px,15vw,210px);line-height:.9;letter-spacing:-.01em;color:#FD7407;text-shadow:0 0 28px rgba(253,116,7,.55),0 0 2px rgba(253,116,7,.9)}
