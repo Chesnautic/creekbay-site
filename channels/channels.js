@@ -118,7 +118,9 @@
       soundBtn.style.display = "none"; pass.textContent = "Out now"; pass.href = sch.passUrl || pass.href;
       root.classList.add("is-out");
       var sec = root.closest("section") || root.parentNode, big = document.createElement("h2");
-      big.className = "ch-outnow"; big.textContent = "OUT NOW"; sec.insertBefore(big, sec.firstChild);
+      big.className = "ch-outnow"; big.textContent = "OUT NOW"; var ask = document.createElement("a");
+      ask.className = "ch-listen"; ask.textContent = "LISTENING YET?"; ask.href = sch.passUrl || "pass.html"; ask.target = "_blank"; ask.rel = "noopener";
+      sec.insertBefore(ask, sec.firstChild); sec.insertBefore(big, ask);
       var kb = document.getElementById("chKeys"), hint = root.querySelector(".ch-hint"), n = root.querySelector(".ch-count .n");
       if (kb) kb.remove(); if (hint) hint.remove(); if (n) n.style.display = "none";
       if (sch.out && sch.out.src) {
