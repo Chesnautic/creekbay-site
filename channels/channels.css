@@ -69,3 +69,14 @@ button.ch-cap:active{transform:translateY(2px);box-shadow:inset 0 1px 0 rgba(255
 .hero-kinetic{transition:opacity .38s ease,filter .38s ease}
 .hero-kinetic.kin-swap{opacity:0;filter:blur(6px)}
 .hero-cb-logo{position:absolute;left:50%;bottom:clamp(18px,4vh,40px);transform:translateX(-50%);width:clamp(56px,7vw,84px);z-index:3;opacity:.9;pointer-events:none}
+
+/* drop day */
+.ch-screen.ch-drop video{transform:none;object-fit:cover}
+.ch-bounce{position:absolute;left:0;top:0;width:15%;height:auto;z-index:2;pointer-events:none;will-change:transform;filter:drop-shadow(0 0 10px rgba(253,116,7,.55)) drop-shadow(0 2px 3px rgba(0,0,0,.35))}
+.ch-bounce.hit{animation:chBounceHit .35s ease-out}
+@keyframes chBounceHit{0%{filter:drop-shadow(0 0 22px rgba(253,116,7,1)) brightness(1.35)}100%{filter:drop-shadow(0 0 10px rgba(253,116,7,.55)) drop-shadow(0 2px 3px rgba(0,0,0,.35))}}
+#pkChannels.is-out .ch-count{margin-top:28px}
+.ch-screen.ch-drop{border-radius:14px 14px 0 0}
+.ch-outnow{margin:0 auto 6px;text-align:center;font-family:"AppleGaramond",Georgia,serif;font-weight:900;font-size:clamp(64px,15vw,210px);line-height:.9;letter-spacing:-.01em;color:#FD7407;text-shadow:0 0 28px rgba(253,116,7,.55),0 0 2px rgba(253,116,7,.9)}
+.ch-listen{display:block;width:max-content;margin:0 auto 26px;font-family:"Archivo",sans-serif;font-weight:700;font-size:clamp(16px,2.4vw,28px);letter-spacing:.22em;color:#fff;text-decoration:none;border-bottom:2px solid #FD7407;padding-bottom:4px;transition:color .2s,text-shadow .2s}
+.ch-listen:hover,.ch-listen:focus-visible{color:#FD7407;text-shadow:0 0 16px rgba(253,116,7,.7)}
