@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-30T18:54:20.668Z",
+  "updated": "2026-11-06T20:06:59.580Z",
   "releases": {
     "turboslidechamp": {
       "spotifyName": "turboslidechamp",
@@ -90,6 +90,14 @@
     "pkcentral": {
       "spotifyName": "pkcentraL",
       "official": [
+        {
+          "id": "08OZ2HDBe1yHdlBpIIIpmX",
+          "title": "Hurt People, Hurt People",
+          "releaseDate": "2026-11-06",
+          "type": "album",
+          "cover": "https://i.scdn.co/image/ab67616d0000b273356b7bd45657667dca1cd4ed",
+          "url": "https://open.spotify.com/album/08OZ2HDBe1yHdlBpIIIpmX"
+        },
         {
           "id": "1Mr0SC0y1UDSm1AwNgpnjn",
           "title": "Intimacy",
