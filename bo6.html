@@ -88,6 +88,7 @@ footer{margin-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap
 .flash{position:fixed;inset:0;z-index:5;background:var(--lime);opacity:0;pointer-events:none}
 .flash.go{animation:fl .5s}
 @keyframes fl{0%{opacity:.55}100%{opacity:0}}
+body.embed header,body.embed footer{display:none} body.embed .wrap{padding-bottom:26px} body.embed .grid{margin-top:22px}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -140,13 +141,21 @@ footer{margin-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap
         <a href="gaby-go.html"><span class="n">06</span><span>Gaby Go!</span><span class="r">Artist</span><span class="s">READY</span></a>
         <a href="ura.html"><span class="n">07</span><span>URA</span><span class="r">Artist</span><span class="s">READY</span></a>
         <a href="fotojoint.html"><span class="n">08</span><span>Fotojoint</span><span class="r">Camera / Visuals</span><span class="s">READY</span></a>
-        <a class="you" href="#top"><span class="n">09</span><span>You</span><span class="r">Listener</span><span class="s">READY</span></a>
+        <a class="you" href="#" onclick="return false"><span class="n">09</span><span>You</span><span class="r">Listener</span><span class="s">READY</span></a>
       </div>
     </section>
   </div>
   <footer class="hud"><span>We all spent years in the sun.</span><span>creekbayrecords.com</span></footer>
 </div>
 <script>
+(function(){
+  if(/[?&]embed=1/.test(location.search)){            // shown inside the home page takeover
+    document.body.classList.add("embed");
+    [].forEach.call(document.querySelectorAll("a[href]"),function(a){if(!a.target)a.target="_top"});
+    var send=function(){try{parent.postMessage({bo6h:document.querySelector(".wrap").offsetHeight},"*")}catch(e){}};
+    window.addEventListener("load",send);window.addEventListener("resize",send);setInterval(send,1500);send();
+  }
+})();
 (function(){
   // EDIT: drop time (midnight Eastern) and, once the song is live, the streaming link.
   var DROP=new Date("2026-11-27T00:00:00-05:00").getTime(), START=new Date("2026-11-15T00:00:00-05:00").getTime();
