@@ -983,5 +983,12 @@
 </script>
 <script src="channels/originkit.bundle.js" defer></script>
 <script src="channels/channels.js" defer></script>
+<!-- BO6 strip: remove this block after the bo6 run -->
+<a id="bo6-strip" href="bo6.html" style="position:fixed;left:0;right:0;bottom:0;z-index:60;display:flex;align-items:center;justify-content:center;gap:12px;padding:11px 44px 11px 14px;background:linear-gradient(90deg,#0F58C2,#0E7629);color:#fff;font:700 12px/1.2 Archivo,system-ui,sans-serif;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;box-shadow:0 -6px 24px rgba(0,0,0,.35)">
+  <span style="width:8px;height:8px;border-radius:50%;background:#3BE56B;box-shadow:0 0 10px #3BE56B;flex:none"></span>
+  <span>BO6 &middot; E The Experience &middot; <span id="bo6-strip-t">out 11.27</span> &middot; Enter the lobby &rarr;</span>
+  <button type="button" aria-label="Hide" onclick="event.preventDefault();event.stopPropagation();this.parentNode.remove()" style="position:absolute;right:6px;top:50%;transform:translateY(-50%);width:32px;height:32px;border:0;background:transparent;color:#fff;font-size:18px;cursor:pointer">&times;</button>
+</a>
+<script>(function(){var l=new Date("2026-11-27T00:00:00-05:00")-Date.now(),e=document.getElementById("bo6-strip-t");if(!e)return;if(l<=0){e.textContent="out now"}else{var d=Math.ceil(l/864e5);e.textContent=d+(d==1?" day":" days")+" left"}})();</script>
 </body>
 </html>
